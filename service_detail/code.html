@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#390c00",
+                        "on-primary-container": "#fdfcff",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-fixed": "#d0e4ff",
+                        "inverse-on-surface": "#edf1f9",
+                        "on-error": "#ffffff",
+                        "surface-container": "#ebeef6",
+                        "outline": "#707884",
+                        "inverse-primary": "#9dcaff",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#dfe2eb",
+                        "tertiary-container": "#0b79c3",
+                        "surface-dim": "#d7dae2",
+                        "primary-fixed-dim": "#9dcaff",
+                        "primary-fixed": "#d1e4ff",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "on-tertiary-fixed": "#001d35",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "outline-variant": "#bfc7d4",
+                        "on-secondary-fixed-variant": "#832600",
+                        "on-surface": "#181c22",
+                        "surface-tint": "#0061a3",
+                        "on-secondary-container": "#551600",
+                        "primary": "#005f9f",
+                        "surface-container-high": "#e5e8f0",
+                        "on-surface-variant": "#3f4752",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2c3137",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f0f4fc",
+                        "on-background": "#181c22",
+                        "primary-container": "#0078c7",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001d36",
+                        "secondary-container": "#ff5e1f",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "surface-container-highest": "#dfe2eb",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#00497c",
+                        "tertiary": "#005f9d",
+                        "secondary": "#ab3500",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased mb-32">
+<!-- TopAppBar Fragment (Supressed Nav for Task-Focused Screen) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)] h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-sky-700 dark:text-sky-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-inter tracking-tight font-bold text-lg text-sky-700 dark:text-sky-400">Tripwise</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-sky-700 dark:text-sky-400">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="active:scale-95 duration-200 text-sky-700 dark:text-sky-400">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</header>
+<main class="mt-16">
+<!-- Hero Carousel (Asymmetric/Bleed Grid) -->
+<section class="relative w-full px-4 md:px-8 py-4">
+<div class="grid grid-cols-4 grid-rows-2 gap-3 h-[400px] md:h-[600px]">
+<div class="col-span-3 row-span-2 relative overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="luxury infinity pool overlooking the ocean at sunset with dramatic orange and purple clouds reflected in the water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzZUCpV6fH_eK8_MIYMXfndezjt66PvXt5ME_GSEvETX2gMh20hKAxWKGSz-R0aFp4CjgJzbLefOlibu_gCyo2XhzMC6YVtckfQHRxlFk9acqo2sOnvMQvB8Z0ulVidMV_yOhlYtWK6OopKBNWCm0g8fSPRpdRlouEDFqLNRTV4UkNZnozJDiut82zz7kriHpMmG0HucXSncoh-WNzC0C5a2volDlW_7YZ6VKwr7wx6mKHjlVchqnd2BhfPHQ4zDVlRE7BocliTOw"/>
+</div>
+<div class="col-span-1 row-span-1 relative overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="ultra-modern luxury hotel lobby with warm lighting marble floors and contemporary art pieces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXTRASLOYGm4cMum2cirxnbJRNj3rwYKRvhQS1THV9PtN0xbuey6EVJQ94Dp2_GmAQ_V8-lnVorcBGFQJbF6z-pBosHCbF1uazVrOoJ__kLaIKemrCmIfgvXxxzJ4sLUBn3WKaJFONt-cXy5k0ChEQ6_NABa2Bwpmb17Tw2ERcmKqRW6oS1GWd38i7MksuIzGheGP1nlYdRxfD-uTuBRLAHXQHqADG8bNq8WlEhqiLrqSRp4Qswxr6FUm3RnNzx_YbCia6nDGHigw"/>
+</div>
+<div class="col-span-1 row-span-1 relative overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="elegant hotel balcony with breakfast setup overlooking a tropical coastline with turquoise waters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpXNSwlx-TqVxN1uzTucDoHOXBSXZWRTuD_P-OCJEN-IFTeQTJt2BTlTPDqFSEwBscPRu0eSHbK_uOCp-jLNpHr90ElSKgHdYtcacMkjkS_tDPipT2eYZ1CBIyYB7sBq0K41RPHjnIrBHratReuo8p5yCHiN53mFl8RbmC1SrwC-ZSOHD-yfn1VAUd8hFLic1pX8WHTREq5eS3LcVb2RwgT9BavANIfn44djMP52kDLkZfVm9UZ5Q1XWElg0bNhFwXna0ZRgcwoUw"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white cursor-pointer group">
+<span class="font-bold tracking-wider group-hover:scale-110 transition-transform">+12 Photos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Identity Section -->
+<section class="px-6 py-8 max-w-5xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Luxury Resort</div>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 text-on-surface-variant font-semibold text-xs">5.0 (2,450 Reviews)</span>
+</div>
+</div>
+<h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface leading-none mt-2">Azure Horizon Bay Resort</h2>
+<div class="flex items-center gap-1 text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-sm font-medium tracking-tight">Portofino, Amalfi Coast, Italy</span>
+</div>
+</div>
+<!-- Bento Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+<!-- About & Amenities -->
+<div class="md:col-span-2 space-y-12">
+<!-- About -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold tracking-tight">About this place</h3>
+<p class="text-on-surface-variant leading-relaxed text-body-lg">
+                            Experience the pinnacle of Mediterranean luxury at Azure Horizon Bay. Perched on the limestone cliffs of Portofino, our resort offers a seamless blend of heritage architecture and contemporary comfort. Every suite features floor-to-ceiling windows with panoramic views of the Ligurian Sea.
+                        </p>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                            Read more <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Amenities Grid -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold tracking-tight">What this place offers</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg transition-colors hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<span class="text-sm font-medium">Free Wi-Fi</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">pool</span>
+<span class="text-sm font-medium">Infinity Pool</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+<span class="text-sm font-medium">Modern Gym</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+<span class="text-sm font-medium">Fine Dining</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">spa</span>
+<span class="text-sm font-medium">Luxury Spa</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary">ac_unit</span>
+<span class="text-sm font-medium">Climate Control</span>
+</div>
+</div>
+</div>
+<!-- Reviews -->
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<h3 class="text-xl font-bold tracking-tight">Guest Reviews</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest">See all</button>
+</div>
+<div class="space-y-4">
+<!-- Review Card 1 -->
+<div class="p-6 bg-surface-container-lowest rounded-lg border-l-4 border-primary/20 shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a smiling woman with warm lighting and a soft natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWja-gFW6N2pDpVrK082sODzjlflLqy1-9_564J0-6C9j1J8j2wyDPEqdUIDEf2Bf4uE0ralhY4rG_v7fIB39vcxt9bHxGP9JWnjIahqjAajsQdnKYaFMDConC2bZYQ7wuQ1yGT876Qkv6iLDJZawIqsU60ZpiScS6F7W7oc-cUBlnsTNgGg1sTJaEHYyPe8FTwOcrqptEsEoxpOfimJpG2JTaOZh_BWpwkm6i5jbcwGDaXvKWsXaVTMsYEEIXtPPaoH4Xdisv1js"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">Elena Rossi</h4>
+<div class="flex text-secondary scale-75 origin-left">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm italic">"Unmatched views and incredible service. The spa treatment was the highlight of our entire trip. Truly a 5-star experience."</p>
+</div>
+<!-- Review Card 2 -->
+<div class="p-6 bg-surface-container-lowest rounded-lg border-l-4 border-primary/20 shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional man in his 40s smiling with soft studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC___bvwgnv8lKHLdD0DfKtGEf_68o9GG4FAIpOCF6OviU_Iec70T-F6O0zzz4wUnoH1T8Q59z-lKM_mJRqTscMNVSXwzKoz-6qc2C34juEFddUrtgcI1fpeeciB1T7Wnp9nWhkmjn5F7L4m3TmbhJ56CCsergtcx58WB0F2SkhMowxuVeUkUzKHcpiUhxFjFKTfKDbRDI3UcpSfYW6rBvjc70akd7EYa5aW3Lc7Tx-J-JiZmXaqmX2CWTBFBM_tq5EZu1NmlwqSnY"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">Marcus Sterling</h4>
+<div class="flex text-secondary scale-75 origin-left">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm italic">"The location is breathtaking. Watching the sunset from the balcony with a glass of local wine was a dream. Can't wait to return."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content: Map & Info -->
+<div class="space-y-8">
+<!-- Map Preview Card -->
+<div class="bg-surface-container-lowest p-2 rounded-lg shadow-sm">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="stylized map view of Portofino Italy coastline with clear markers for points of interest" data-location="Portofino" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArbaD-G0BfCskeUujSGybgvBunBNkakLLAYCt0URf2pFAcyRHnSjSiww6oQwkPzh6ooHU9jz9TUXk9_2zHdvrYZ8JU46xwWWwcIAFzpzSOc2kHKElGBloZIHnAWV08f6D0WLbTzWyQeupXhBRYmaf97o1RtQeIAYOPuZQA4zTsfqfAi7mVTxF9KB5jfUsej55OHdUyNq12a9vkUMLFhGeZyi6He8522WUI-6dff7bFJtHM8OxE4mcBYenkn6aoO8yBSSvBgBOck_o"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-white p-3 rounded-full shadow-lg">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1">Where you'll be</h4>
+<p class="text-on-surface-variant text-xs mb-3">Portofino, Italy • 10 mins from Piazza Martiri</p>
+<button class="w-full py-3 bg-surface-container-low text-primary font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-primary/5 transition-colors">View on Map</button>
+</div>
+</div>
+<!-- Host Info Card -->
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<h4 class="text-sm font-bold tracking-tight uppercase text-on-surface-variant/70">Managed by</h4>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="font-bold text-sm">Tripwise Concierge</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Gold Tier Service</p>
+</div>
+</div>
+<button class="w-full py-2 border border-outline-variant/30 text-on-surface text-xs font-bold rounded-lg">Contact Support</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Booking Bar -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface/95 dark:bg-slate-900/95 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,0,0,0.05)] border-t border-surface-container">
+<div class="max-w-5xl mx-auto flex justify-between items-center h-24 px-6 md:px-12">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-2xl md:text-3xl font-black text-on-surface tracking-tighter">$1,250</span>
+<span class="text-on-surface-variant text-sm font-medium">/ night</span>
+</div>
+<div class="text-[10px] font-bold text-secondary-container uppercase tracking-widest mt-1">Free Cancellation</div>
+</div>
+<div class="flex gap-4">
+<!-- Date Picker Interaction Simulation -->
+<div class="hidden md:flex flex-col justify-center px-4 border-r border-outline-variant/20 mr-4">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant mb-1">Check-in</span>
+<span class="text-sm font-bold">Aug 12 - 19</span>
+</div>
+<button class="bg-secondary-container text-white px-8 md:px-12 py-4 rounded-xl font-bold tracking-tight hover:brightness-110 active:scale-95 duration-200 shadow-[0px_10px_30px_rgba(255,94,31,0.2)]">
+                    Book Now
+                </button>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Business Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9ff",
+                    "surface-container": "#ebeef6",
+                    "on-surface": "#181c22",
+                    "on-primary-container": "#fdfcff",
+                    "inverse-surface": "#2c3137",
+                    "surface-container-low": "#f0f4fc",
+                    "on-primary-fixed-variant": "#00497c",
+                    "surface-tint": "#0061a3",
+                    "tertiary-container": "#0b79c3",
+                    "surface-container-high": "#e5e8f0",
+                    "secondary": "#ab3500",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-on-surface": "#edf1f9",
+                    "primary-fixed": "#d1e4ff",
+                    "primary-container": "#0078c7",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "outline-variant": "#bfc7d4",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#005f9d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#390c00",
+                    "background": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#832600",
+                    "inverse-primary": "#9dcaff",
+                    "surface-container-highest": "#dfe2eb",
+                    "primary": "#005f9f",
+                    "surface-dim": "#d7dae2",
+                    "outline": "#707884",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed": "#d0e4ff",
+                    "on-tertiary-fixed": "#001d35",
+                    "on-surface-variant": "#3f4752",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dfe2eb",
+                    "on-secondary-container": "#551600",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001d36",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-background": "#181c22",
+                    "secondary-container": "#ff5e1f",
+                    "primary-fixed-dim": "#9dcaff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .tonal-shift { background-color: rgba(240, 244, 252, 0.5); }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8f9ff]/80 dark:bg-slate-900/80 backdrop-blur-3xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-primary-fixed">
+<img alt="business owner profile picture" class="w-full h-full object-cover" data-alt="Professional business owner headshot with a friendly smile, clean corporate attire, in a bright modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUvf8uuK4F3LArKzVHGi4IFD-nhEZGzVjlexLUPeABs04M6yguIdknSYKfaDF-RW5UWMmLb919NX4Ny_pL0L03-0uFS1ytHE4JgG3uDEJ8LFUlzIT6N9STaRkFnTBtZOytTChv5LHFkcGpZtlQq8blB2a5g0BPnhdwHy9WDFyNpO-alAbroUki6iUD61g1C-PWNfM4jUtbO_GQCA78pRCG0nAV8abXI6enryYAQ5PQmyeFMSU_A-1zo17kGpNThVHxGFeHiVzu6J0"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-[#005f9f] dark:text-[#0194f3] font-['Inter']">Tripwise Business</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#f0f4fc] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 text-[#005f9f] dark:text-[#0194f3]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Dashboard Header -->
+<section class="mb-8">
+<p class="text-on-surface-variant font-medium tracking-wide uppercase text-xs mb-1">Good morning, James</p>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Overview</h2>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Revenue Overview Card -->
+<div class="md:col-span-8 bg-surface-container-lowest p-8 rounded-lg shadow-[0px_10px_40px_rgba(0,95,159,0.04)] flex flex-col justify-between min-h-[320px]">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-on-surface-variant text-sm font-medium">Total Revenue</h3>
+<p class="text-4xl font-extrabold tracking-tight mt-1">$42,850.00</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-xs font-bold">
+                            +12.5% this month
+                        </div>
+</div>
+<!-- Month to Date Mini Stat -->
+<div class="flex gap-8 mb-8">
+<div>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-semibold">Month-to-date</p>
+<p class="text-xl font-bold">$8,240.00</p>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-semibold">Payouts Pending</p>
+<p class="text-xl font-bold">$1,150.00</p>
+</div>
+</div>
+</div>
+<!-- Sparkline Visual -->
+<div class="w-full h-24 flex items-end gap-1">
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[40%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[55%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[45%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[70%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[60%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[85%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[100%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[75%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[90%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[65%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[80%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[95%]"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="md:col-span-4 space-y-6">
+<div class="bg-secondary-container p-8 rounded-lg text-on-secondary flex flex-col justify-between min-h-[150px] group cursor-pointer active:scale-95 transition-transform">
+<div>
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="add_circle">add_circle</span>
+<h3 class="text-xl font-bold">Add New Listing</h3>
+<p class="text-sm opacity-90">Scale your business by adding new destinations.</p>
+</div>
+</div>
+<!-- Orders Summary Card -->
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<h3 class="font-bold text-on-surface-variant text-sm uppercase tracking-widest">Order Status</h3>
+<div class="grid grid-cols-1 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-md flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="pending">pending</span>
+<span class="font-medium">Pending</span>
+</div>
+<span class="font-bold text-lg">04</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-md flex justify-between items-center border-l-4 border-primary">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-medium">Confirmed</span>
+</div>
+<span class="font-bold text-lg">12</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-md flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="task_alt">task_alt</span>
+<span class="font-medium">Completed</span>
+</div>
+<span class="font-bold text-lg">89</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="md:col-span-12 lg:col-span-12 mt-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold tracking-tight">Recent Activity</h3>
+<button class="text-primary font-semibold text-sm hover:underline">View All Notifications</button>
+</div>
+<div class="bg-surface-container-low rounded-lg overflow-hidden">
+<div class="divide-y divide-outline-variant/10">
+<!-- Notification Item 1 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-lowest transition-colors hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="hotel">hotel</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-on-surface font-semibold truncate">New booking for Azure Horizon Bay</p>
+<p class="text-on-surface-variant text-sm">Customer: Elena Gilbert • 4 nights</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">2 mins ago</p>
+<p class="text-sm font-bold text-primary">+$840</p>
+</div>
+</div>
+<!-- Notification Item 2 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-lowest transition-colors hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="reviews">reviews</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-on-surface font-semibold truncate">New 5-star review received</p>
+<p class="text-on-surface-variant text-sm">"Incredible service and stunning views..."</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">1 hour ago</p>
+</div>
+</div>
+<!-- Notification Item 3 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-lowest transition-colors hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-on-surface font-semibold truncate">Payout Processed</p>
+<p class="text-on-surface-variant text-sm">Funds transferred to your bank account ending in 4492</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">3 hours ago</p>
+<p class="text-sm font-bold text-on-surface">-$2,400</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,95,159,0.06)] flex justify-around items-center h-20 pb-4 px-4">
+<a class="flex flex-col items-center justify-center text-[#ff5e1f] dark:text-[#ff5e1f] scale-110 transition-transform tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter'] mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 transition-transform tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter'] mt-1">Listings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 transition-transform tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter'] mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 transition-transform tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter'] mt-1">Finance</span>
+</a>
+</nav>
+</body></html>

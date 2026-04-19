@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#9dcaff",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "tertiary": "#005f9d",
+                    "secondary": "#ab3500",
+                    "on-background": "#181c22",
+                    "on-secondary-fixed": "#390c00",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "primary": "#005f9f",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#3f4752",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2c3137",
+                    "tertiary-container": "#0b79c3",
+                    "secondary-container": "#ff5e1f",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#0061a3",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dfe2eb",
+                    "outline-variant": "#bfc7d4",
+                    "primary-fixed": "#d1e4ff",
+                    "on-secondary-container": "#551600",
+                    "surface-container": "#ebeef6",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fdfcff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#181c22",
+                    "outline": "#707884",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-on-surface": "#edf1f9",
+                    "on-secondary-fixed-variant": "#832600",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-primary-fixed-variant": "#00497c",
+                    "surface-dim": "#d7dae2",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "surface-container-low": "#f0f4fc",
+                    "on-primary-fixed": "#001d36",
+                    "surface-container-highest": "#dfe2eb",
+                    "inverse-primary": "#9dcaff",
+                    "tertiary-fixed": "#d0e4ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e5e8f0",
+                    "on-tertiary-fixed": "#001d35",
+                    "primary-container": "#0078c7",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#f8f9ff]/80 backdrop-blur-xl dark:bg-[#181c22]/80 docked full-width top-0 sticky bg-surface-container-low shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex justify-between items-center px-6 py-4 w-full z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a travel executive in a modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcwOAqf943qOhiMKjMs-8MjDkgzc7d7lGQfElSaoiLVWhXjMiobAlaME1MCppAHokcWiula-8bITGFdtBeya0lF2symbkGD7FAdouj8PFPiLkllArsJkKcOik74RJ5DQqRlvocn4JbJNzGupYR9KlW1VQe3R40MYXClVoTsd0zo-WQaqzNCQaPDVg4CMZZahqG0ogcpQL3bX2p_YhpD_Od1jb_Jsd3ANrbKgDuztDaPOy9gbqUie4M8lc1a4vQtf4CuymZTgpJbXw"/>
+</div>
+<h1 class="text-lg font-black tracking-tighter text-[#181c22] dark:text-white uppercase font-headline">Tripwise Provider</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#f0f4fc] dark:hover:bg-[#3f4752] rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#0194f3]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-6 mt-8">
+<!-- Editorial Header Section -->
+<div class="mb-10">
+<h2 class="text-[3.5rem] font-black tracking-tighter leading-tight text-on-surface mb-2">Orders</h2>
+<p class="text-on-surface-variant body-lg max-w-xl">Manage your upcoming journeys and guest experiences from your editorial dashboard.</p>
+</div>
+<!-- Custom Bento Filter / Tabs -->
+<div class="flex flex-wrap gap-3 mb-12">
+<button class="px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-bold shadow-lg transition-all active:scale-95">Pending (4)</button>
+<button class="px-8 py-4 rounded-xl bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container-high transition-all active:scale-95">Confirmed</button>
+<button class="px-8 py-4 rounded-xl bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container-high transition-all active:scale-95">Completed</button>
+</div>
+<!-- Order Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Order Card 1: Pending -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex flex-col gap-6 group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Pending</span>
+<h3 class="text-2xl font-bold tracking-tight text-on-surface mt-2">Azure Horizon Bay Resort</h3>
+</div>
+<div class="text-right">
+<p class="text-primary font-black text-2xl tracking-tighter">$1,240.00</p>
+<p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-widest">Total Price</p>
+</div>
+</div>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant/10">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="portrait of a smiling male traveler with a modern aesthetic and soft outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy065BfM9D94tZJ6kyHrNXqCundQbnvk6KjoHaqio6mQlce79jpaE2IC9f8Ua6t3mHH_J0BdZprVjmQRQUaCG8lmHxWGdKHHlUs2g_aBsy9oX97sXy2Dg7L8FCJ7P7l1CKcqsybuJ5vMwjm6JXiXP62qO11Hu9KFqqK1V0LIGcH54c-i2e8jiBeqiFZGV3cZCzXQ932GpxvODBXn9FXlNnZ12itgisP9DgW7d3QUUpW9spaXJtOmowzM5yz3d63kNpjIqhrz5pb0c"/>
+</div>
+<div>
+<p class="text-on-surface font-bold">Marcus Thorne</p>
+<p class="text-on-surface-variant text-sm">Oct 24 - Oct 28, 2023</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-secondary-container text-on-secondary py-4 rounded-xl font-bold tracking-tight active:scale-95 transition-all shadow-md">Accept</button>
+<button class="px-6 py-4 rounded-xl bg-surface-container-low text-primary font-bold active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</div>
+<!-- Order Card 2: Pending -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex flex-col gap-6 group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Pending</span>
+<h3 class="text-2xl font-bold tracking-tight text-on-surface mt-2">Serene Alpine Lodge</h3>
+</div>
+<div class="text-right">
+<p class="text-primary font-black text-2xl tracking-tighter">$890.50</p>
+<p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-widest">Total Price</p>
+</div>
+</div>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant/10">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="professional woman in her 30s with a warm expression and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9uerUVfiZOAw5rVKQmL_lIbVXucXyzRiUyyEVmCAP_2Qc3fOJaVCDCkzfPnmMsr7xLIiuUN5TUt85uwBI_5jugO8XgqAfj6bXt5x-IaoEUVq3Mc0RlBMKjRGm-o4Pgaa5nheeEvTA2vsdy_BsjGxULFzqbpMRAswc-aSGiHNb1fuI3JHnvZI2r1QhL_UO6-4sxjxnJ3uzRutun0zDDLF0PL_2R8r6005ukVPiSASq32XUnj7hsVe-Ip8AReLgV8j9lfl-4CbguYY"/>
+</div>
+<div>
+<p class="text-on-surface font-bold">Elena Rodriguez</p>
+<p class="text-on-surface-variant text-sm">Nov 02 - Nov 05, 2023</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-secondary-container text-on-secondary py-4 rounded-xl font-bold tracking-tight active:scale-95 transition-all shadow-md">Accept</button>
+<button class="px-6 py-4 rounded-xl bg-surface-container-low text-primary font-bold active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+</div>
+<!-- Order Card 3: Pending (Bento Style Variation) -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex flex-col md:flex-row hover:translate-y-[-4px] transition-transform duration-300">
+<div class="md:w-1/3 relative min-h-[200px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="luxury infinity pool overlooking a tropical bay during sunset with warm orange and teal tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8baGRHs7qLqughKG-CClHI5DU9CIcwb9r7oqeH9euIiuV2Uz09_COLkO-JCesm-bkGxQFTPZRance6Hm8J41W2u2uPYH1uwcT8dbIszhywMJ7VsaSs_PjGcAk8cvU30gwsb_01hfrXevSCTwIlH7UqBoWMBf5s0lpd7ik_tOnxfNAbQy-_3xJtXWQ0HO-PvuLzDKZdWE_V7TQ4l56PIhcGkVn1GLRFuRRaQC71AXWTX8qM-vUxncWhvEzl4o-YCNT-3ZvlqY0UYM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Premium Booking</span>
+</div>
+</div>
+<div class="md:w-2/3 p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Pending Approval</span>
+<h3 class="text-3xl font-black tracking-tighter text-on-surface mt-3">Royal Oasis Spa &amp; Villa</h3>
+</div>
+<div class="text-right">
+<p class="text-primary font-black text-3xl tracking-tighter">$4,120.00</p>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-widest">Luxury Class</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-8 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="artistic portrait of a creative professional woman in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG4gVpx5fHzjXb1hCTyaSaQYNyfWFQqFS1zgyYA0Lv43TZYN88HimgLIR5fQVK8F6DNaQbt2naRF_--avabDJyND6IS4mSm-u-D6BhJf0l4aN4g3lQCerylv38AWYJniFVRtvaZskxTccgDdRSrkWJNSqofjVG2Iz2Ljyx60cAwePQ8f8ULD5eQh_CgfuLQajBCVt64MoCFtRz2bHYWT_xLIsOvuzNvrelGyJtA3bNInyA6Gnf4gke5gZp77-wb007PhKX_PfKpdM"/>
+</div>
+<div>
+<p class="text-on-surface font-bold text-sm">Sarah Jenkins</p>
+<p class="text-on-surface-variant text-xs">Primary Guest</p>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 hidden sm:block"></div>
+<div>
+<p class="text-on-surface font-bold text-sm">Dec 15 - Dec 22</p>
+<p class="text-on-surface-variant text-xs">7 Nights Stay</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-secondary-container text-on-secondary py-4 rounded-xl font-bold tracking-tight active:scale-95 transition-all shadow-md">Accept Reservation</button>
+<button class="px-8 py-4 rounded-xl bg-surface-container-low text-primary font-bold active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Contact</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8f9ff]/90 backdrop-blur-2xl dark:bg-[#181c22]/90 fixed bottom-0 w-full rounded-t-[2.5rem] shadow-[0px_-10px_40px_rgba(0,95,159,0.08)] bg-[#f0f4fc] dark:bg-[#2a2d35] no-border">
+<div class="flex flex-col items-center justify-center text-[#3f4752] dark:text-[#bfc7d4] py-2 hover:text-[#0194f3] transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3f4752] dark:text-[#bfc7d4] py-2 hover:text-[#0194f3] transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Listings</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#d1e4ff] dark:bg-[#00497d] text-[#005f9f] dark:text-[#d1e4ff] rounded-3xl px-5 py-2 active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3f4752] dark:text-[#bfc7d4] py-2 hover:text-[#0194f3] transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Finance</span>
+</div>
+</nav>
+</body></html>

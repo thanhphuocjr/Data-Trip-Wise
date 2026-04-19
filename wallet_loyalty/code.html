@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#0b79c3",
+                    "secondary-container": "#ff5e1f",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#0061a3",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dfe2eb",
+                    "outline-variant": "#bfc7d4",
+                    "primary-fixed": "#d1e4ff",
+                    "on-secondary-container": "#551600",
+                    "primary-fixed-dim": "#9dcaff",
+                    "tertiary": "#005f9d",
+                    "secondary": "#ab3500",
+                    "on-background": "#181c22",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "on-secondary-fixed": "#390c00",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "primary": "#005f9f",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2c3137",
+                    "on-surface-variant": "#3f4752",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f0f4fc",
+                    "on-primary-fixed": "#001d36",
+                    "surface-container-highest": "#dfe2eb",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#9dcaff",
+                    "surface-container-high": "#e5e8f0",
+                    "on-tertiary-fixed": "#001d35",
+                    "tertiary-fixed": "#d0e4ff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#0078c7",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#fdfcff",
+                    "surface-container": "#ebeef6",
+                    "on-error-container": "#93000a",
+                    "outline": "#707884",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-on-surface": "#edf1f9",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#181c22",
+                    "surface-dim": "#d7dae2",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#832600",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-primary-fixed-variant": "#00497c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tonal-shift-bg-surface-low { background-color: #f0f4fc; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-24">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400">search</span>
+<span class="text-2xl font-black text-sky-700 dark:text-sky-400 tracking-tighter">Tripwise</span>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="professional portrait of a young man with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALZIBT2-LuMB5fbfNAKWbwU5ZDSc8OAem4TDyVV9OgjZtbsX2d8YpBANmsPQvRppBSRErwIJUrh1hGeFHZ9Lygs6EcXDS1XHfJRcMtzg1aStwe6DM5hanwhG8_ea9NP4UEp8-BoRF5LJxa0woPTcXrz4iGOS90SMJwLrVNFWNkJ-UZpfbwCAItlsRtxD0WEfSGB7ukos5JIw31qIRMjhG4EtF-BxenKP0os3YqvWOepZG42NYGgtHbvw6lENZ84K-qIkAvHqR5Jkg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto space-y-8">
+<!-- Header Section -->
+<section class="space-y-2">
+<h1 class="text-4xl font-black tracking-tight text-on-surface">Wallet &amp; Loyalty</h1>
+<p class="text-on-surface-variant body-lg">Manage your travel funds and rewards points in one place.</p>
+</section>
+<!-- Balance Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Primary Wallet Card -->
+<div class="md:col-span-2 relative overflow-hidden bg-primary-container rounded-lg p-8 text-on-primary-container shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<!-- Abstract Decorative Pattern -->
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex justify-between items-start">
+<span class="label-md font-semibold tracking-wider opacity-80 uppercase">Available Balance</span>
+<span class="material-symbols-outlined opacity-80">account_balance_wallet</span>
+</div>
+<div class="mt-4">
+<span class="text-5xl font-black tracking-tighter">$12,450.80</span>
+</div>
+</div>
+<div class="mt-10 flex flex-wrap gap-4">
+<button class="bg-secondary-container text-on-secondary px-8 py-3 rounded-xl font-bold flex items-center gap-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined">add_circle</span>
+                            Top-up
+                        </button>
+<button class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 active:scale-95 duration-200 backdrop-blur-md">
+<span class="material-symbols-outlined">payments</span>
+                            Withdraw
+                        </button>
+</div>
+</div>
+</div>
+<!-- Loyalty Points Card -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between shadow-[0px_10px_40px_rgba(0,95,159,0.04)]">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant font-semibold label-md uppercase tracking-wider">Trip Points</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="mt-4">
+<span class="text-4xl font-black text-on-surface tracking-tighter">45,200</span>
+<p class="text-on-surface-variant text-sm mt-1">≈ $452.00 value</p>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-3/4 rounded-full"></div>
+</div>
+<p class="text-xs text-on-surface-variant">4,800 points away from <span class="font-bold text-primary">Gold Tier</span></p>
+<button class="text-primary font-bold flex items-center gap-1 hover:underline">
+                        Explore Rewards
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Actions & Transaction History -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Side: Transaction History -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-on-surface">Recent Transactions</h2>
+<button class="text-primary font-bold label-md uppercase tracking-widest">See All</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 space-y-1">
+<!-- Transaction 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg transition-all hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">flight_takeoff</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Flight to Santorini</h4>
+<p class="text-xs text-on-surface-variant">Oct 12, 2023 • Aegean Airlines</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-black text-on-surface">-$840.00</span>
+<span class="text-[10px] bg-primary-fixed text-primary px-2 py-0.5 rounded-full font-bold">+120 pts</span>
+</div>
+</div>
+<!-- Transaction 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg transition-all hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Le Petit Maison</h4>
+<p class="text-xs text-on-surface-variant">Oct 11, 2023 • Dining</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-black text-on-surface">-$156.40</span>
+<span class="text-[10px] bg-secondary-fixed text-secondary px-2 py-0.5 rounded-full font-bold">+15 pts</span>
+</div>
+</div>
+<!-- Transaction 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg transition-all hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-700">
+<span class="material-symbols-outlined">add</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Wallet Top-up</h4>
+<p class="text-xs text-on-surface-variant">Oct 09, 2023 • Visa **** 4242</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-black text-green-600">+$2,000.00</span>
+<span class="text-[10px] text-on-surface-variant font-medium">Completed</span>
+</div>
+</div>
+<!-- Transaction 4 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg transition-all hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">hotel</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Grand Plaza Hotel</h4>
+<p class="text-xs text-on-surface-variant">Oct 05, 2023 • Accommodation</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-black text-on-surface">-$1,200.00</span>
+<span class="text-[10px] bg-primary-fixed text-primary px-2 py-0.5 rounded-full font-bold">+400 pts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Cards & Offers -->
+<div class="space-y-6">
+<h2 class="text-xl font-bold text-on-surface">Your Cards</h2>
+<div class="space-y-4">
+<!-- Physical Card Mini View -->
+<div class="p-6 bg-surface-container-high rounded-lg relative overflow-hidden">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-black italic text-on-surface-variant">VISA</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs">Primary Card</p>
+<p class="text-on-surface font-bold">**** **** **** 4242</p>
+</div>
+</div>
+<!-- Add New Card Button -->
+<button class="w-full border-2 border-dashed border-outline-variant py-8 rounded-lg flex flex-col items-center justify-center gap-2 text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_card</span>
+<span class="font-bold label-md">Add Payment Method</span>
+</button>
+</div>
+<!-- Loyalty Perk Banner -->
+<div class="bg-gradient-to-br from-secondary to-orange-800 rounded-lg p-6 text-white relative overflow-hidden shadow-xl">
+<div class="relative z-10">
+<h3 class="font-black text-lg">Exclusive Upgrade!</h3>
+<p class="text-sm opacity-90 mt-1">Redeem 5,000 points for a Premium Lounge access on your next trip.</p>
+<button class="mt-4 bg-white text-secondary px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest active:scale-95 duration-200">
+                            Claim Now
+                        </button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-9xl rotate-12">loyalty</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[3rem] bg-surface/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0px_-4px_20px_rgba(0,95,159,0.04)]">
+<div class="flex justify-around items-center h-20 px-4 pb-4">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">travel</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">My Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Planner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold active:scale-90 duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

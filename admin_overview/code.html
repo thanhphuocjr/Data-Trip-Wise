@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Admin - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "tertiary": "#005f9d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001d35",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#707884",
+                        "secondary-container": "#ff5e1f",
+                        "outline-variant": "#bfc7d4",
+                        "on-surface-variant": "#3f4752",
+                        "on-primary-fixed-variant": "#00497c",
+                        "primary-container": "#0078c7",
+                        "surface-container-low": "#f0f4fc",
+                        "primary-fixed-dim": "#9dcaff",
+                        "on-secondary-fixed": "#390c00",
+                        "inverse-primary": "#9dcaff",
+                        "on-surface": "#181c22",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#0b79c3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#005f9f",
+                        "on-background": "#181c22",
+                        "inverse-surface": "#2c3137",
+                        "on-secondary-container": "#551600",
+                        "on-secondary-fixed-variant": "#832600",
+                        "secondary": "#ab3500",
+                        "surface-container-high": "#e5e8f0",
+                        "surface-container": "#ebeef6",
+                        "inverse-on-surface": "#edf1f9",
+                        "surface-variant": "#dfe2eb",
+                        "surface-tint": "#0061a3",
+                        "surface-dim": "#d7dae2",
+                        "on-primary-container": "#fdfcff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-primary-fixed": "#001d36",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d1e4ff",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "surface-container-highest": "#dfe2eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#f0f4fc] dark:bg-slate-900 h-screen w-64 border-r-0 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden shadow-lg shadow-primary/20">
+<img alt="Tripwise Admin Logo" class="w-full h-full object-cover" data-alt="minimalist modern abstract logo icon in deep blue and white representing travel and global connection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx5Q7bB9y1GqNXG7FWvParLHJbRRCHUrSubSvvH9nMqsB0wPSL4oL3RJ3Ix_U0ZjBj-k8bQSIk_JqYExqshfH0UFbKNtJqVOhpPlHUWgtzYrB9rRmZhcMRPVtfQaQsjS_v89Fexl72Q80-OMqHns2r0krJfgkNZnE_r3V5xnz5JKFOjcy-EAnVqxT_xEz8hqr4i6ICSD7VHqkXgTxuIQKNo5PtcgcFOsccwb8TSDY81ejrQW0uN9_iiYXPbW9ntUSLxT1n4ejbtYQ"/>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#181c22] dark:text-white tracking-tighter">Tripwise</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold opacity-60">Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#005f9f] font-bold border-r-4 border-[#005f9f] dark:text-[#0194f3] dark:border-[#0194f3] hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-r-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Travelers</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-r-xl" href="#">
+<span class="material-symbols-outlined" data-icon="business_center">business_center</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Providers</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-r-xl" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Bookings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-r-xl" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Analytics</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-2 border-t border-outline-variant/10 pt-6">
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Support</span>
+</a>
+<div class="mt-6 px-4">
+<button class="w-full py-4 bg-secondary-container text-on-secondary font-bold rounded-xl shadow-lg shadow-secondary/20 hover:scale-[0.98] transition-transform active:scale-95">
+                    New Entry
+                </button>
+</div>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center px-8 z-40 shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex items-center gap-4 w-96">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-[#005f9f] text-sm transition-all" placeholder="Search system logs, users, bookings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-[#3f4752] hover:text-[#ff5e1f] transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="text-[#3f4752] hover:text-[#ff5e1f] transition-all">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold leading-none">Admin Avatar</p>
+<p class="text-[10px] text-on-surface-variant font-medium mt-1">Super Admin</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed border-2 border-surface-container-highest overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a confident male executive in a navy suit with soft natural lighting and blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcU9wlrR1iT77Osinj6OUGFCBOngGRRtGqUQQgIT6dwoAzWSHw6SV8kHXRd2SqRG9K3RZ032sBHNAI6SzV1pwR6lRkEavsfDxpwpj87WrebpnMj_REqAIXZLyEk1_ArYTCko7FnAWGeQgx0vUxXZl87Kqp5v51-J_14v0JJcaAxnwEMutAcu3EZEA_JqUMXdnilCLxRvvbXZMTecoEsRaKkMr2fTvtBMe3nBSB3n2nsMreinQkTTMrkhNp-JIzmu883-czz5rTTSY"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<!-- Dashboard Header -->
+<div class="mb-10">
+<h2 class="text-3xl font-black text-on-surface tracking-tight">System Overview</h2>
+<p class="text-on-surface-variant mt-1 font-medium">Real-time performance metrics and global platform health.</p>
+</div>
+<!-- Key Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:bg-primary-container hover:text-white transition-all duration-300 cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 rounded-xl bg-primary-fixed text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="text-xs font-bold text-secondary group-hover:text-white bg-secondary-fixed group-hover:bg-white/20 px-2 py-1 rounded-md">+12.5%</span>
+</div>
+<h3 class="text-on-surface-variant group-hover:text-white/80 font-bold text-sm tracking-wide uppercase">Total Revenue</h3>
+<p class="text-3xl font-black mt-1">$1.2M</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:bg-primary-container hover:text-white transition-all duration-300 cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 rounded-xl bg-primary-fixed text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+<span class="text-xs font-bold text-secondary group-hover:text-white bg-secondary-fixed group-hover:bg-white/20 px-2 py-1 rounded-md">+8.2%</span>
+</div>
+<h3 class="text-on-surface-variant group-hover:text-white/80 font-bold text-sm tracking-wide uppercase">Total Users</h3>
+<p class="text-3xl font-black mt-1">45k</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:bg-primary-container hover:text-white transition-all duration-300 cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 rounded-xl bg-primary-fixed text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+</div>
+<span class="text-xs font-bold text-secondary group-hover:text-white bg-secondary-fixed group-hover:bg-white/20 px-2 py-1 rounded-md">+4.1%</span>
+</div>
+<h3 class="text-on-surface-variant group-hover:text-white/80 font-bold text-sm tracking-wide uppercase">Active Providers</h3>
+<p class="text-3xl font-black mt-1">2.4k</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:bg-primary-container hover:text-white transition-all duration-300 cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 rounded-xl bg-primary-fixed text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined" data-icon="bed">bed</span>
+</div>
+<span class="text-xs font-bold text-secondary group-hover:text-white bg-secondary-fixed group-hover:bg-white/20 px-2 py-1 rounded-md">+2.3%</span>
+</div>
+<h3 class="text-on-surface-variant group-hover:text-white/80 font-bold text-sm tracking-wide uppercase">Occupancy Rate</h3>
+<p class="text-3xl font-black mt-1">88%</p>
+</div>
+</div>
+<!-- Main Visual Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Charts Section -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Revenue Growth Chart Mockup -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="text-xl font-black">Revenue Growth</h3>
+<p class="text-on-surface-variant text-sm">Historical billing data (Last 6 months)</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-xs font-bold text-primary bg-primary-fixed px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Monthly
+                            </span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<!-- Chart Bar Mockup (Simulated with div scaling) -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-fixed rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 45%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">Jan</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-fixed rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 60%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">Feb</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-fixed rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 55%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">Mar</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-fixed rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 80%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">Apr</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary-fixed rounded-t-lg transition-all duration-500 group-hover:bg-primary" style="height: 95%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">May</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 75%;"></div>
+<span class="text-[10px] font-bold mt-4 text-on-surface-variant uppercase tracking-tighter">Jun</span>
+</div>
+</div>
+</div>
+<!-- Quick Tasks Asymmetric Layout -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-primary-container text-white p-8 rounded-lg relative overflow-hidden group cursor-pointer">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<h4 class="text-xl font-black mb-2">Inventory Audit</h4>
+<p class="text-sm text-white/80">Review upcoming seasonal availability across 42 global regions.</p>
+<button class="mt-6 flex items-center gap-2 font-bold text-sm bg-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-primary transition-all">
+                                Launch Review <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-lg group cursor-pointer hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="verified_user">verified_user</span>
+<h4 class="text-xl font-black text-on-surface mb-2">Provider KyC</h4>
+<p class="text-sm text-on-surface-variant">Verify 12 new partner applications for the Summer Cruise initiative.</p>
+<div class="mt-8 flex -space-x-3 overflow-hidden">
+<img alt="user" class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-high" data-alt="close-up portrait of a woman with curly hair looking directly into the camera with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cXFRdnxNqFkxh8IiZ5t4_6H9HaOtkE8C8I7quQ-5Lh_Gw0we9arLLqClxESIMFKuuR5v3tHky5FCAtXqBn3Lba2PGjzjSU2Fn66ajpgqxK58C7Lrs5eGdbSwsYkag0gRLMRHA4vptmu9z0sxKa4zE5ZZEP1eUiZXHqsikUSzkTX2xDew0WnBhirC8-ZlYOlLbQZsMdj6SsyIn7dm0GhGkj2aB5iGNlDEn8alfJ14peq-mgr6UzLYEU0cREzc9iGrhxLtYePrmIg"/>
+<img alt="user" class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-high" data-alt="professional headshot of a mature man with glasses and grey hair in an office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi_dsQekQ05ZuW2ll7a_qo2ZR_7AUpLPxI9Aoy2Ac92I2vIqcUnjhtWzp2RMJlkDsTGn1BLQ_3AMI7E91jYBquWegRzefWHr5swQnmxcNj4HPeGWPIUSRBXAyoFFK5rJ_QXVZpmJSisghpapX2-OuDjTdZbDPM-c8AddaOyp0qine6yvZRHVq9sSPYUuOXdRNVuOg04A1LyTmDLUS9i405b0_INGlyjW0Vgcc5XTN0t2W5bKAmV3bKKBsdEvqvWdXe09coplDWcpQ"/>
+<img alt="user" class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-high" data-alt="artistic portrait of a young woman with natural light hitting her face against a soft green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCETvxVYWGPSgfBBs9qgQaYliQxfhLfgOOj2z2InRZLeWpP_5FQ8C6SQdCUmQUM4yPrhDJzgJwm8Ua0nkslThZdCQXBuDE-h2NOCQdQDtaqH_eE1v2cdp6KEu4Qv0f5V3tPGljpv6NH8c5TFrr3SgX4gCPTNOaKexnQj8goz8TaWnVGZg_Z_6tZsKcw34FFV7XrOYIW8wBdBsZhG3vlIKM5FgACYzQO5KSrFgv0wVfn4M4xg0xkdvznpQryyUXEluEGQeUsGL4SbUg"/>
+<div class="flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-surface-container-high bg-primary-fixed text-[10px] font-black text-primary">+9</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-low rounded-lg p-8 h-full">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-black">System Activity</h3>
+<button class="text-primary text-xs font-bold hover:underline">View History</button>
+</div>
+<div class="space-y-8">
+<!-- Activity Item 1 -->
+<div class="flex gap-4 relative">
+<div class="absolute left-4 top-10 bottom-0 w-px bg-outline-variant/30"></div>
+<div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 z-10 shadow-lg shadow-secondary/10">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Major Spike in Booking: Bali</p>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Demand increased by 40% in the last 2 hours. Auto-scaling server capacity...</p>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mt-3">2 mins ago</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4 relative">
+<div class="absolute left-4 top-10 bottom-0 w-px bg-outline-variant/30"></div>
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">New Provider: Azure Resorts</p>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Verified by Admin #402. Onboarding process initiated for 4 properties.</p>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mt-3">45 mins ago</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4 relative">
+<div class="absolute left-4 top-10 bottom-0 w-px bg-outline-variant/30"></div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-white flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">System Broadcast Sent</p>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Newsletter "Luxury Getaways 2024" delivered to 45,000 users.</p>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mt-3">3 hours ago</p>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Security Audit Completed</p>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Zero critical vulnerabilities found in API v2.4 endpoints.</p>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mt-3">Yesterday</p>
+</div>
+</div>
+</div>
+<!-- Featured Analytics Promo -->
+<div class="mt-12 bg-white rounded-lg p-6 border border-outline-variant/20 shadow-sm overflow-hidden relative group cursor-pointer">
+<div class="relative z-10">
+<span class="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Platform Spotlight</span>
+<h5 class="text-lg font-black mt-2 leading-tight">User Retention is at an all-time high (72%)</h5>
+<p class="text-xs text-on-surface-variant mt-2 mb-4">The new loyalty program launched last month is driving repeat bookings.</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-1000" style="width: 72%;"></div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-9xl" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

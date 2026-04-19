@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#390c00",
+                    "on-primary-container": "#fdfcff",
+                    "secondary-fixed": "#ffdbd0",
+                    "tertiary-fixed": "#d0e4ff",
+                    "inverse-on-surface": "#edf1f9",
+                    "on-error": "#ffffff",
+                    "surface-container": "#ebeef6",
+                    "outline": "#707884",
+                    "inverse-primary": "#9dcaff",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#dfe2eb",
+                    "tertiary-container": "#0b79c3",
+                    "surface-dim": "#d7dae2",
+                    "primary-fixed-dim": "#9dcaff",
+                    "primary-fixed": "#d1e4ff",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "on-tertiary-fixed": "#001d35",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "outline-variant": "#bfc7d4",
+                    "on-secondary-fixed-variant": "#832600",
+                    "on-surface": "#181c22",
+                    "surface-tint": "#0061a3",
+                    "on-secondary-container": "#551600",
+                    "primary": "#005f9f",
+                    "surface-container-high": "#e5e8f0",
+                    "on-surface-variant": "#3f4752",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2c3137",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f0f4fc",
+                    "on-background": "#181c22",
+                    "primary-container": "#0078c7",
+                    "surface": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "secondary-container": "#ff5e1f",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "surface-container-highest": "#dfe2eb",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#00497c",
+                    "tertiary": "#005f9d",
+                    "secondary": "#ab3500",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-sky-700">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-inter tracking-tight font-bold text-lg text-sky-700 leading-tight">Hotels in Bali</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">142 Properties Found</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-sky-50 transition-colors active:scale-95 duration-200 text-sky-700">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ring-2 ring-primary-container">
+<img alt="User Profile" data-alt="portrait of a professional young man smiling in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPDrDsulGm2-WLeE7GmusqqLBg-Vk3QVnJ6JCqeTYL9EHl45u6qnkxJw4FK0jKswHnqdf8AvOyVCjUfkiIrTS8w9HRVeukfkDO0GcKvVRDZGUmOI8X29zF5TdZED6489uIUjuRVoBJnOazaGoHPykql47nsuJle5V6HDhhNe-UZ5RsLfy9lRjyC26OEcc0fE4qjN3ACZwZo2ZR0h5ATzIGKtAtU-5-A7XwLJzlNzvl6cnmPYpZqC9Tk_0Fl-mQlPHbtp7LSRA2dI4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="pt-20 px-6 max-w-5xl mx-auto">
+<!-- Filter Bar & Sort -->
+<section class="mt-4 mb-8">
+<div class="flex items-center justify-between gap-4 mb-6">
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-secondary-container text-on-primary font-semibold rounded-full shadow-lg shadow-orange-500/20 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+<span class="text-sm">Filters</span>
+</button>
+<button class="px-5 py-2.5 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full ring-1 ring-outline-variant/15 hover:bg-surface-container transition-colors active:scale-95 duration-200 text-sm whitespace-nowrap">Price</button>
+<button class="px-5 py-2.5 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full ring-1 ring-outline-variant/15 hover:bg-surface-container transition-colors active:scale-95 duration-200 text-sm whitespace-nowrap">Rating</button>
+<button class="px-5 py-2.5 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full ring-1 ring-outline-variant/15 hover:bg-surface-container transition-colors active:scale-95 duration-200 text-sm whitespace-nowrap">Location</button>
+</div>
+<button class="flex items-center gap-1 text-primary font-bold text-sm whitespace-nowrap active:scale-95 duration-200">
+<span>Popularity</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Bento Grid/Asymmetric Layout for Results -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Main Featured Result -->
+<div class="md:col-span-2 group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden h-[300px] mb-4 bg-surface-container-low">
+<img alt="Luxury Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="luxury infinity pool overlooking tropical balinese jungle at sunrise with misty atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg_lgHitwNgy0sdoziF-cleuhPhlOeTcRu0_vcthxn0_G5RcPy3iPPgYmP3geQEj8NqD7LNtSCK5NMxgPdy4SXHi7_7j3mTdefAF3He6Ti3FcOvf4gfhPTR10jA5Jlpn3MIIXX2VRAeXgSJSs-pmF83_cVfiCsQdhSotnDWejLihdDpAR5CzNGFDC70pZREZI7h3LkSN58LbhUbPeeet6tX9YsZGQy_PJw1fmpZNIpjPOV4IrVc56nApqSlTliEONEa-ZyAhSl5hE"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-orange-500 text-[16px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface">4.9</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="px-3 py-1 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest rounded-full">Top Pick</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-black text-on-surface tracking-tight">The Kayon Jungle Resort</h3>
+<p class="text-on-surface-variant flex items-center gap-1 text-sm mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                Ubud, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-semibold">from</p>
+<p class="text-2xl font-black text-primary">$320<span class="text-xs font-medium text-on-surface-variant">/night</span></p>
+</div>
+</div>
+</div>
+<!-- Secondary Result 1 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden h-[240px] mb-4 bg-surface-container-low">
+<img alt="Beachfront Hotel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="contemporary beachfront hotel with white architecture and turquoise water under clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRo-OnQJ42A5w4WHgXp20gRHtmwwPq8PYB3Ei1HqZ06xWyXdsxHmcxjhIZzHH-IZOL_Vv1c4TkHh7DcaZsnyHX4LxJGkr6bd2HJdB9s818w9FEmaqy8pvEQuLIe27S-JfD4vVOPzJYHpI2bCTO5MfarRFVcTjLTqBj7plXdSWLjFtYcNRv-BKYWlRwpGTwY7vp2BamMxXI7wWSA-lAgodxO5GKuxvg7x7OLubjBgIjRjTbAiA7xgE_J2LCRQE5yJepwV-qr3W0vtA"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-orange-500 text-[16px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface">4.7</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-on-surface tracking-tight">Seminyak Beach Resort</h3>
+<p class="text-on-surface-variant flex items-center gap-1 text-sm mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+                                Seminyak, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xl font-bold text-primary">$185</p>
+</div>
+</div>
+</div>
+<!-- Secondary Result 2 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden h-[240px] mb-4 bg-surface-container-low">
+<img alt="Eco Villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="modern eco-friendly villa in Bali with bamboo structures and lush garden terrace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIIDzu-x7djUdglQqFy84NYp0QE8iJIJC5y8llQEC88_7ua3QNFq19k5kzSSwZj5ogwszm4BpvvklRheP5FTejTwWpEG3ql2M8885ALHs0rHeDCLxPw_hi2o7_sKXjMQ5H6W9OJMvWgeC9ujonGZLBmtbuMGKfZEHV2idu6lVhX8cUNOQ0ZlDzTTKPy6Jsi8dwBHFGrT8n2vRAZplkNU1tqGX-nJr2lr84tkLPYKpK_BNND12jGMNy-Ub_wsqMoT1mecV973nvde8"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-orange-500 text-[16px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-on-surface tracking-tight">Bambu Indah Eco Resort</h3>
+<p class="text-on-surface-variant flex items-center gap-1 text-sm mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+                                Sayan, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xl font-bold text-primary">$210</p>
+</div>
+</div>
+</div>
+<!-- Horizontal Result -->
+<div class="md:col-span-2 flex flex-col md:flex-row gap-6 bg-surface-container-lowest p-4 rounded-lg shadow-[0px_10px_40px_rgba(0,95,159,0.04)] ring-1 ring-outline-variant/10 cursor-pointer">
+<div class="w-full md:w-1/3 h-48 rounded-md overflow-hidden shrink-0">
+<img alt="Boutique Hotel" class="w-full h-full object-cover" data-alt="luxury boutique hotel bedroom with canopy bed and open balcony overlooking tropical forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV9tAmickURLCJazjUCPEaFBh8oUfSXREYCoqtJ8fYB7wCRAeCM8JiVojsbQ5BUss-NVBQ9CqsLRCucJZUJxWoj7REXWWcRpT3HT0HpyUinsQJvPjtwajNP3sPEwut3BBfDwKAqVpwDmeUTbYmj8FgDOlRxfdx2ciagV9pqfK7a1DsQBtmNSsise1WodwWIlJI4vJogDezWSUMMAapX3mjobXV87C3XJayISX6PC2UmOCHYU6hwKJQfvMT70e9sXdtYx3hjznXdeo"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-xl font-bold text-on-surface">Ametis Villa Bali</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded text-[10px] font-bold uppercase">Popular</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-3">Exclusive private villas with personalized butler service in the heart of Canggu.</p>
+<div class="flex gap-4">
+<div class="flex items-center gap-1 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="pool">pool</span> Pool
+                                </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="wifi">wifi</span> Free WiFi
+                                </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="spa">spa</span> Spa
+                                </div>
+</div>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-orange-500 text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-on-surface">4.6</span>
+<span class="text-xs text-on-surface-variant">(1.2k reviews)</span>
+</div>
+<div class="text-right">
+<p class="text-2xl font-black text-primary">$155</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button: Map View -->
+<div class="fixed bottom-28 left-1/2 -translate-x-1/2 z-50">
+<button class="bg-secondary-container text-on-secondary font-bold px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 active:scale-90 duration-300 transition-all hover:pr-10">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="tracking-wide text-sm uppercase">Map View</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[3rem] bg-surface/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0px_-4px_20px_rgba(0,95,159,0.04)] flex justify-around items-center h-20 px-4 pb-4">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="travel">travel</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">My Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Planner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

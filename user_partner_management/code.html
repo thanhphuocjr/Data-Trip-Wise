@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Admin - User &amp; Partner Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "tertiary-fixed-dim": "#9ccaff",
+                      "tertiary": "#005f9d",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#001d35",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#707884",
+                      "secondary-container": "#ff5e1f",
+                      "outline-variant": "#bfc7d4",
+                      "on-surface-variant": "#3f4752",
+                      "on-primary-fixed-variant": "#00497c",
+                      "primary-container": "#0078c7",
+                      "surface-container-low": "#f0f4fc",
+                      "primary-fixed-dim": "#9dcaff",
+                      "on-secondary-fixed": "#390c00",
+                      "inverse-primary": "#9dcaff",
+                      "on-surface": "#181c22",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#0b79c3",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#005f9f",
+                      "on-background": "#181c22",
+                      "inverse-surface": "#2c3137",
+                      "on-secondary-container": "#551600",
+                      "on-secondary-fixed-variant": "#832600",
+                      "secondary": "#ab3500",
+                      "surface-container-high": "#e5e8f0",
+                      "surface-container": "#ebeef6",
+                      "inverse-on-surface": "#edf1f9",
+                      "surface-variant": "#dfe2eb",
+                      "surface-tint": "#0061a3",
+                      "surface-dim": "#d7dae2",
+                      "on-primary-container": "#fdfcff",
+                      "tertiary-fixed": "#d0e4ff",
+                      "on-tertiary-fixed-variant": "#00497a",
+                      "secondary-fixed-dim": "#ffb59d",
+                      "secondary-fixed": "#ffdbd0",
+                      "on-primary-fixed": "#001d36",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d1e4ff",
+                      "on-tertiary-container": "#fdfcff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "background": "#f8f9ff",
+                      "surface-container-highest": "#dfe2eb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#f0f4fc] dark:bg-slate-900 h-screen w-64 border-r-0 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden shadow-lg">
+<img alt="Tripwise Admin Logo" data-alt="Tripwise Admin Logo simplified monogram on a blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HywYrFhaPgdzqjA7xUKyTIU3opx5UffNWefRIpM7BWTyScUyy_bNvubJMG3S1DxNM4l6qanTUfV2sqD9Ze4d1_6tM0kZ-zgIfRU6y2FE9EE8yem6aI9wtgCVliEfge6TBR1FCd7w00-Dc80vCnlecUm3Po3-k0Tgs5T588J1tTXg7mPPx5fj38APGvYg6NQOZs_LYw9nbDhljENJKMIntGmQbx6RLDYYT_BnK-4DdlRwNNzrkZb1R-UmPHPz7IJE7uwxYSCiYJY"/>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#181c22] dark:text-white tracking-tighter">Tripwise</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Dashboard</span>
+</a>
+<!-- Active State: Travelers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#005f9f] font-bold border-r-4 border-[#005f9f] dark:text-[#0194f3] dark:border-[#0194f3] bg-[#ffffff] dark:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Travelers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">business_center</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Providers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">confirmation_number</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto px-3 flex flex-col gap-1">
+<button class="mx-3 mb-6 bg-secondary-container text-on-secondary px-4 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg">
+<span class="material-symbols-outlined">add</span>
+<span>New Entry</span>
+</button>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-[#3f4752] dark:text-slate-400 hover:bg-[#ffffff] dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-['Inter'] body-lg leading-relaxed">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-[#005f9f] transition-all text-sm" placeholder="Search travelers, providers or bookings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-on-surface-variant hover:text-[#ff5e1f] transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-[#ff5e1f] transition-all">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Rivera</p>
+<p class="text-[10px] text-on-surface-variant">Super Admin</p>
+</div>
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="professional portrait of a male admin user with a confident smile in a corporate setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjMdjGp3ehnqpdzVN5fxDfwnyLyhR8JjZJIShbOEeEJHoeA06Qv3wHx_3dS2JgVujZA3bJx3ESYQS_2u5zpkdL3tB96oRYfW2JEvn9ztYT7ZSN1fJcrsExfiWLiWjqjKUqHk4wF12J_2bzzCjfnAwJI64RdHClDMU9Dek__XpI2Qk7JNGUywU7-Ggb5yxkPJlKZLU9NydlSOqpx4EGfmgeWXzCejOUrobXZV8dQC9BRlIrvTLYRJkdk7IwH8yQAvRrgz-waptiBuQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">User &amp; Partner Directory</h2>
+<p class="text-on-surface-variant font-medium">Manage your global ecosystem of travelers and service providers.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="px-4 py-2 bg-surface-container-lowest text-primary font-bold rounded-md shadow-sm text-sm">All Members</button>
+<button class="px-4 py-2 text-on-surface-variant hover:text-on-surface font-medium text-sm">Travelers</button>
+<button class="px-4 py-2 text-on-surface-variant hover:text-on-surface font-medium text-sm">Providers</button>
+</div>
+</div>
+</div>
+<!-- Bento Filter Bar -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+<div class="md:col-span-2 bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="p-3 bg-primary-fixed rounded-lg">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+</div>
+<div class="flex-1 flex gap-4">
+<select class="bg-surface-container-lowest border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary w-full">
+<option>All Roles</option>
+<option>Traveler</option>
+<option>Provider (Hotel)</option>
+<option>Provider (Flight)</option>
+</select>
+<select class="bg-surface-container-lowest border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary w-full">
+<option>All Status</option>
+<option>Active</option>
+<option>Pending</option>
+<option>Banned</option>
+</select>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Total Users</p>
+<p class="text-2xl font-black text-on-surface">12,842</p>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary-container opacity-50">group</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Pending Approval</p>
+<p class="text-2xl font-black text-secondary">143</p>
+</div>
+<span class="material-symbols-outlined text-3xl text-secondary opacity-50">verified_user</span>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0px_10px_40px_rgba(0,95,159,0.04)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Name &amp; Contact</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Join Date</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant/30">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a young woman with a friendly expression, outdoor natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc4UFfCD4tGXT5kc1CoHj3Lkx1IzrV0Zq3OwDAf4qp0ZRQAsqEQYPXo153poJRTyoMsvKMeulSlKNzWbIeUhkkwcxQYMDH4brNtenPY-BeTa9UCxE8ALbpExhxlkR3Kbnmq2Q_9ud316cUIxc3c2xxBiZM9pxOucDNuf3mrKXvhutJzN-5kh7gUur4F54eXvDsoLYKxkIjIGixf3ek8fNKg8MrqIEAmicjdn-0C49HZVCIPTiGLWGUdufjecnNoeyBsMlANhdKWHY"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">elena.r@voyage.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">
+                                        Traveler
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-green-600 font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-primary transition-all" title="View Details">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-tertiary transition-all" title="Message">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-all" title="Ban User">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="middle-aged man in a suit, professional corporate headshot with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVzFFPXL7wGQd3c0nYcTOzRcpOP0Nq9qlMghbd0xVmeFxQXIEh5HLmo8XNZbwKPGM-Z9zpRqrG4QEefH3IN0Enn9KkTtaeCpDPol8L2Ib8-czifaHzOhOatca4KVxlg6I4L4EqnQhG3YInZPCwE5_F5JuNXwBuRURyhp4WbF4rHhlQ-AKBj8QYBMN2jKHjz-A6F6dA68Tp2BoqO5lqj_vb7iE2eJkQuPSsV63hOfx_oJzm2wa6gvpcGUhh5fqNM7uPqs48-znwwSw"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Grand Plaza Hotel</p>
+<p class="text-xs text-on-surface-variant">admin@grandplaza.net</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                                        Provider
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Aug 05, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Pending
+                                    </div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-tertiary transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-all">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up portrait of a woman with curly hair looking directly at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtw_24H-hc8_rwoY-VMtTwYzGAyPKq-mXFYt9d00qUPmuqyy5pHxkuTP9BHCeYsHtdHHyHjsvn0CapV4fbrTg1cbxwsCG_lbBmX5CLENPURS3YxvwpC4BGukaeROTv57tWQdjNKIhSP8sTlcWdpOHHOetCeVaupNz9fvtgVFh6mQXfdRxIybh6SwTr1WSeerfdnCCVFqZsbqaouFgKbq00u-MFdLVFuUKh-pInq6U9-Q9dwXYX8XnwHtffb4D4uIOg2nL5QaU2O9k"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Marcus Thompson</p>
+<p class="text-xs text-on-surface-variant">marcus.t@webmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">
+                                        Traveler
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Jan 15, 2024</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-bold text-xs opacity-60">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+                                        Banned
+                                    </div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-tertiary transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 hover:bg-primary-container/20 rounded-lg text-primary transition-all" title="Unban">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="executive businessman standing in a modern office hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDljc898F8CkqpXSd_B8h1phcXLlpg9RiiA6RGYxGiSWbgs13-CZO65-RQLmuJLtObMEVlN_mz2d2rG9nsyTxcpFHUyjRjVp5BDsyU6vQgeyh8dCYmLmks5l0WErkbp5pxuy1IxnAX4SiwXRt8LOLMK_weeT_ARpNe--7kEzqP-7LsTFIjYP9h8ZOuy-8K92fQ2EqGR7ITXBXk7vBY9GgFAnam3GjR6HiNbo5xWxJnO9zFI7YZjgmCYXgmYc7H-OFoedfis7Oc6aoo"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">SkyHigh Airways</p>
+<p class="text-xs text-on-surface-variant">ops@skyhigh.aero</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                                        Provider
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Nov 22, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-green-600 font-bold text-xs">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-tertiary transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error transition-all">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-low/30 flex items-center justify-between border-t border-surface-variant/20">
+<p class="text-xs font-bold text-on-surface-variant">Showing 1 to 4 of 12,842 entries</p>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary text-xs font-bold shadow-md">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs font-bold">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs font-bold">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs font-bold">120</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Management Insights (Asymmetric Card Layout) -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-gradient-to-br from-primary to-primary-container p-8 rounded-2xl text-white relative overflow-hidden shadow-xl">
+<div class="relative z-10 flex flex-col justify-between h-full">
+<div>
+<h3 class="text-2xl font-black mb-4">Growth Snapshot</h3>
+<p class="text-primary-fixed/80 max-w-md mb-8">Traveler sign-ups have increased by 24% this month following the Mediterranean summer campaign.</p>
+</div>
+<div class="flex items-end gap-12">
+<div>
+<p class="text-4xl font-black">+2,402</p>
+<p class="text-xs uppercase tracking-widest font-bold opacity-70">New Travelers</p>
+</div>
+<div>
+<p class="text-4xl font-black">+18</p>
+<p class="text-xs uppercase tracking-widest font-bold opacity-70">Partner Hotels</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-2xl flex flex-col justify-between">
+<div>
+<h4 class="font-black text-on-surface mb-2">Pending Actions</h4>
+<ul class="space-y-4 mt-6">
+<li class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<p class="text-sm font-bold text-on-surface">3 Hotel verifications</p>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<p class="text-sm font-bold text-on-surface">12 Support tickets</p>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<p class="text-sm font-bold text-on-surface">5 KYC reviews</p>
+</li>
+</ul>
+</div>
+<button class="w-full py-3 bg-white text-primary font-bold rounded-xl text-sm hover:shadow-md transition-all active:scale-95">
+                        View Action Center
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

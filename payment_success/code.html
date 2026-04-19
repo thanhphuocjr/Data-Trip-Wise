@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Successful - Tripwise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#0078c7",
+                    "on-secondary-fixed-variant": "#832600",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#ff5e1f",
+                    "on-primary-container": "#fdfcff",
+                    "on-tertiary-fixed": "#001d35",
+                    "surface-container-high": "#e5e8f0",
+                    "surface-variant": "#dfe2eb",
+                    "primary-fixed-dim": "#9dcaff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bfc7d4",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed": "#390c00",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "primary-fixed": "#d1e4ff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary": "#005f9f",
+                    "inverse-on-surface": "#edf1f9",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "tertiary-container": "#0b79c3",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#707884",
+                    "inverse-primary": "#9dcaff",
+                    "on-surface-variant": "#3f4752",
+                    "on-secondary-container": "#551600",
+                    "secondary": "#ab3500",
+                    "surface-tint": "#0061a3",
+                    "tertiary": "#005f9d",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-surface": "#181c22",
+                    "surface-dim": "#d7dae2",
+                    "on-primary-fixed": "#001d36",
+                    "on-background": "#181c22",
+                    "inverse-surface": "#2c3137",
+                    "surface-container-low": "#f0f4fc",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed": "#d0e4ff",
+                    "surface-container-highest": "#dfe2eb",
+                    "surface-container": "#ebeef6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-bg-surface-low {
+            background-color: #f0f4fc;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400" data-icon="search">search</span>
+</div>
+<div class="text-2xl font-black text-sky-700 dark:text-sky-400 tracking-tighter">Tripwise</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-fixed">
+<img alt="Profile" data-alt="close-up portrait of a smiling young professional man with soft studio lighting and a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC00pW8U7VHtP1zes7jtqWZ23eTnnx1mx6AHwAyCqPBopVd1bfr0xcm6Mb2b_mhsv70ZrR1j9BV6u-_P1WHAYPnOm6lIkYDMLTuQbZskCocvyq-Tze2R7IQyhaXN4YYATcK4FvFJUMKzWOXkOScehmux_7IveRXIKG23VKpiGXCUXx0pGb5DtbA33mmmS0eWaFeJhXxg91ymhOvmDpfAlE-GE2P5LpVn0FuKNxVtr6m28Yv0kL0pLLMbd4zU2ASt2PDRVY8UwLpHOY"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-12 px-6 flex items-center justify-center">
+<div class="max-w-xl w-full">
+<!-- Celebratory Card -->
+<div class="bg-surface-container-lowest rounded-lg p-8 md:p-12 text-center shadow-[0px_10px_40px_rgba(0,95,159,0.06)] border border-outline-variant/10">
+<!-- Success Indicator -->
+<div class="mb-8 inline-flex items-center justify-center w-24 h-24 rounded-full bg-emerald-50 text-emerald-500">
+<span class="material-symbols-outlined !text-6xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Messaging -->
+<h1 class="text-display-lg font-black tracking-tight text-on-surface mb-4 text-3xl md:text-4xl">
+                    Booking Successful!
+                </h1>
+<p class="text-on-surface-variant body-lg leading-relaxed mb-8 max-w-sm mx-auto">
+                    Your trip to <span class="text-primary font-bold">Azure Horizon Bay</span> has been confirmed. E-ticket sent to your email.
+                </p>
+<!-- Details Section (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+<div class="bg-surface-container-low p-5 rounded-md">
+<p class="text-on-surface-variant label-md font-semibold uppercase tracking-wider mb-1">Booking ID</p>
+<p class="text-on-surface font-bold text-lg">TW-882910</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-md">
+<p class="text-on-surface-variant label-md font-semibold uppercase tracking-wider mb-1">Destination</p>
+<p class="text-on-surface font-bold text-lg">Azure Horizon Bay</p>
+</div>
+</div>
+<!-- Featured Image -->
+<div class="rounded-md overflow-hidden h-48 mb-10 relative group">
+<img alt="Azure Horizon Bay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="serene tropical beach with crystal clear turquoise water reaching white sand at golden hour, soft cinematic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA63Nb2W6D7VD_v2PXb-s8gLbXiBX3eKo202rOpHBto8TC1XyrSYJpRylAJoLPCBwDzed0elWCrLB6EK0sSN1XfDA8ZnbIDrGHwBteL82ukHJAGHPC00yyQ6V-zWrFyeasAF4mESwZ2jBGf138wo4tdQuj2OABguwOHwoB1gEjxDytoPBLYfCmEkWz_bfEt-ltK_Ra4vWQWyhQK0MdWjelaePZ3eBi0-Q2ybeMQLwvz3EG6XBTJNuC-ut5umnJQ4jiwqVH-tu9qmgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white text-left">
+<p class="text-[10px] uppercase tracking-widest font-bold opacity-80">Arrival Date</p>
+<p class="font-bold">Oct 24, 2024</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-secondary-container text-on-secondary font-bold py-4 px-8 rounded-xl active:scale-95 transition-all duration-200 shadow-lg shadow-orange-500/20">
+                        View My Trips
+                    </button>
+<button class="w-full text-primary font-semibold py-3 hover:bg-primary-fixed/30 rounded-xl transition-colors">
+                        Download E-Ticket
+                    </button>
+</div>
+</div>
+<!-- Additional Context -->
+<div class="mt-8 text-center px-4">
+<p class="text-on-surface-variant text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+                    Payment secured by Tripwise Protection
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed as per Task-Focused/Transactional suppression rule) -->
+<!-- Not rendering as this is a focused confirmation screen -->
+</body></html>

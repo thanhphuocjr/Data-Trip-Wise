@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#0b79c3",
+                    "secondary-container": "#ff5e1f",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#0061a3",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dfe2eb",
+                    "outline-variant": "#bfc7d4",
+                    "primary-fixed": "#d1e4ff",
+                    "on-secondary-container": "#551600",
+                    "primary-fixed-dim": "#9dcaff",
+                    "tertiary": "#005f9d",
+                    "secondary": "#ab3500",
+                    "on-background": "#181c22",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "on-secondary-fixed": "#390c00",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "primary": "#005f9f",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2c3137",
+                    "on-surface-variant": "#3f4752",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f0f4fc",
+                    "on-primary-fixed": "#001d36",
+                    "surface-container-highest": "#dfe2eb",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#9dcaff",
+                    "surface-container-high": "#e5e8f0",
+                    "on-tertiary-fixed": "#001d35",
+                    "tertiary-fixed": "#d0e4ff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#0078c7",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#fdfcff",
+                    "surface-container": "#ebeef6",
+                    "on-error-container": "#93000a",
+                    "outline": "#707884",
+                    "secondary-fixed": "#ffdbd0",
+                    "inverse-on-surface": "#edf1f9",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#181c22",
+                    "surface-dim": "#d7dae2",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#832600",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-primary-fixed-variant": "#00497c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-bg-surface-low {
+            background-color: #f0f4fc;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background font-body min-h-screen pb-24">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400" data-icon="search">search</span>
+</div>
+<div class="text-2xl font-black text-sky-700 dark:text-sky-400 tracking-tighter font-inter">Tripwise</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 duration-200 cursor-pointer">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a smiling man with a friendly expression in a professional bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj0DhjFAIlxKtcA8YX2bJTP-FgPiYR3lLWz9n4GS4QVmTNm8PhceGldIC1t_Y2OrLAdhusqbykiLCBCH_-0Jnu3Ouj2PngPlH90R221kLWQ3ra2FfIfcjeVAGtOsB1pj6oTK1_Wr5IFe27vL9pfmWcX0nHBzrisjmb52VV9HwuDiS1V4JO5nSZaGwOxnh5m4ZJBIuOC7TYcaEfRVZX1LKMyW0GnFHQ3Fc6kdWkCiz16AMmXDYJn3k1P9lnIpRLxVywss3OoNf6eiY"/>
+</div>
+</nav>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center text-center space-y-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary-container">
+<img alt="User Avatar" class="w-full h-full object-cover rounded-full border-4 border-surface" data-alt="high quality portrait of a young male professional smiling against a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhv0_R2Kft9YTmuR-C94GhNxNwkR6L9jdJSMcazVF-k8nE-UBRVPndsznphfjT0boM-9a0XYvnzeFhIl7PpRdl2JNxQJybYo8V6iiV2AyYVb_kG4RXxRanWRJPdiMLB0Uoex3F0UU13VYrolQL6kzHAOmqlUv8hb0ySWGYtYm77qGVPkssKoEcDq7u3D_qbPXTchOyc16h9dtxQFF30mABEJgmjO0aZXODrzdYa9MOXNMLzCnrENzNogoTP3nbOd53Vg5bjT8pxwg"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-secondary-container text-white p-2 rounded-full shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div>
+<h1 class="text-3xl font-black tracking-tight text-on-surface">Alex Thompson</h1>
+<p class="text-on-surface-variant font-medium">Premium Voyager • 12 Countries</p>
+</div>
+</section>
+<!-- Become a Provider Bento Card -->
+<section class="relative overflow-hidden bg-primary-container rounded-lg p-8 text-on-primary-container shadow-xl">
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+<div class="flex-1 space-y-2">
+<h2 class="text-2xl font-bold tracking-tight">Become a Provider</h2>
+<p class="text-on-primary-container/80 text-sm leading-relaxed">Share your local expertise and earn while you travel. Join our global network of elite trip planners.</p>
+<div class="pt-4">
+<button class="bg-secondary-container text-on-secondary px-6 py-3 rounded-xl font-bold shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition-all">
+                            Start Registration
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden md:block w-32 h-32 bg-surface/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</section>
+<!-- Provider Registration Form (Embedded/Modal Style) -->
+<section class="bg-surface-container-low rounded-lg p-6 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h3 class="text-lg font-bold text-on-surface">Identity Verification</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Document Upload Area 1 -->
+<div class="group relative flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-lg p-8 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+<span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-primary transition-colors" data-icon="cloud_upload">cloud_upload</span>
+<span class="text-sm font-semibold text-on-surface">Passport or ID</span>
+<span class="text-xs text-on-surface-variant">JPG, PNG or PDF</span>
+</div>
+<!-- Document Upload Area 2 -->
+<div class="group relative flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-lg p-8 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+<span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-primary transition-colors" data-icon="account_balance">account_balance</span>
+<span class="text-sm font-semibold text-on-surface">Proof of Address</span>
+<span class="text-xs text-on-surface-variant">Recent utility bill</span>
+</div>
+</div>
+</section>
+<!-- Menu Items List -->
+<section class="bg-surface-container-lowest rounded-lg overflow-hidden">
+<div class="divide-y divide-surface-container">
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<span class="font-semibold text-on-surface">Security &amp; Privacy</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<span class="font-semibold text-on-surface">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<span class="font-semibold text-on-surface">Help Center</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</div>
+<span class="font-semibold text-error">Sign Out</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[3rem] bg-surface/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0px_-4px_20px_rgba(0,95,159,0.04)] flex justify-around items-center h-20 px-4 pb-4">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="travel">travel</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">My Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Planner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+</nav>
+</body></html>

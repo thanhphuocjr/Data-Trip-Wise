@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "surface-container": "#ebeef6",
+                        "on-surface": "#181c22",
+                        "on-primary-container": "#fdfcff",
+                        "inverse-surface": "#2c3137",
+                        "surface-container-low": "#f0f4fc",
+                        "on-primary-fixed-variant": "#00497c",
+                        "surface-tint": "#0061a3",
+                        "tertiary-container": "#0b79c3",
+                        "surface-container-high": "#e5e8f0",
+                        "secondary": "#ab3500",
+                        "secondary-fixed": "#ffdbd0",
+                        "inverse-on-surface": "#edf1f9",
+                        "primary-fixed": "#d1e4ff",
+                        "primary-container": "#0078c7",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "outline-variant": "#bfc7d4",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#005f9d",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#390c00",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#832600",
+                        "inverse-primary": "#9dcaff",
+                        "surface-container-highest": "#dfe2eb",
+                        "primary": "#005f9f",
+                        "surface-dim": "#d7dae2",
+                        "outline": "#707884",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "on-tertiary-fixed": "#001d35",
+                        "on-surface-variant": "#3f4752",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dfe2eb",
+                        "on-secondary-container": "#551600",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001d36",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-background": "#181c22",
+                        "secondary-container": "#ff5e1f",
+                        "primary-fixed-dim": "#9dcaff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-border { border: none !important; }
+        .tonal-shift { background: linear-gradient(to top, rgba(240, 244, 252, 0.8), rgba(255, 255, 255, 0.9)); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright font-body text-on-surface antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f8f9ff]/80 dark:bg-slate-900/80 backdrop-blur-3xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)]">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-fixed">
+<img alt="business owner profile picture" class="w-full h-full object-cover" data-alt="professional headshot of a smiling business executive in a tailored suit against a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaszrIEZvetULMLtB4tGcayxtAiexPhLYVbVFR6IEPCOIXRLJpZzksMaf692woplhhlPAKnn5KaSkQbxtMSMmQF98rKS4m9WFG3pxEmLoHhVr2pRwShaZOIB11tl30K8z6Rrs08ECf0KPACkwUfZv5FJHN3wFJnFAahMaUNVlh1g1F60132JmcIEEPjecY7be3nn6f90BMysvWRRUC5MqdN1O-LypaVFCKjBTUtV0A5CnBBWi-UKvZLOCvb1elu0MgPd-h-dNilNE"/>
+</div>
+<span class="text-xl font-bold tracking-tighter text-[#005f9f] dark:text-[#0194f3] font-headline">Tripwise Business</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[#f0f4fc] transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#005f9f]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto">
+<!-- Search & Filter Header -->
+<div class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tight mb-6 text-on-surface leading-none">Your Properties</h1>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant/60" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-5 pl-12 pr-6 text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all duration-300 outline-none" placeholder="Search your listings..." type="text"/>
+</div>
+</div>
+<!-- Bento Grid Listings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Card 1: Large Featured -->
+<div class="md:col-span-8 group bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0px_10px_40px_rgba(0,95,159,0.06)] border border-outline-variant/10">
+<div class="relative h-64 overflow-hidden">
+<img alt="Azure Horizon Bay Resort" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury infinity pool overlooking a tropical turquoise ocean with palm trees and modern architectural lounge areas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnhdr7bJmb0ybErSXUx4ND_1wUpmS_drgRpercFQ5YIulRwSjxVJu8PPmEfyToZ4lf0IR3Iidpws9Dm_fhiC-qz15bGe4isMcCKQ97if_PnctpSyOruNVJNTLAQ1MCHydlL7NTBSC1DK4AK0Wj5cDmPbDXEC-dyoOOQpRh90NYvpgfrILTLcwG1o6ko9TjENoCD63Nufvw3PTOuN75RrJjWRWShl0-O2VIquZAFVTqn7lMvGHZC0RrsgeSNCSO1e-Xi_vIeqSuRcA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest">Active</span>
+</div>
+</div>
+<div class="p-6 flex justify-between items-end">
+<div>
+<h3 class="text-2xl font-bold text-on-surface tracking-tight mb-1">Azure Horizon Bay Resort</h3>
+<p class="text-on-surface-variant/80 font-medium">Santorini, Greece • Premium</p>
+</div>
+<button class="bg-surface-container-high hover:bg-primary-container hover:text-white transition-all duration-300 px-6 py-3 rounded-full flex items-center gap-2 group/btn">
+<span class="font-bold text-sm tracking-tight">Edit Listing</span>
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Medium Vertical -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0px_10px_40px_rgba(0,95,159,0.06)] border border-outline-variant/10">
+<div class="relative h-64 overflow-hidden">
+<img alt="Skyline Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="ultra-modern glass penthouse overlooking a lit-up cityscape at dusk with warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeSRBZpEm6COdw47xML03qawIbNIuCnCmTdpZAIc_I903eUMd-CY-tSV2R42wvsdze6yrkC1KMb5oPNdf6p1p-LodN_KOTAvFa2WDVXJ6oexvZvl2LESdd-UxiptJOzNz7_WcjMMEbcaSW6wTr35AqtWRswIiMgNKRR3F79Bs5UHss-rwm3Yl1uPTkJeEg1I51y-7jnSczM_yQ1mbbVr9ArTUqA_2VOqDtrBxhboDjEur_idx6dUOo2A6Eoe8BiCwm8v8nTVCzdzw"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest">Active</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-on-surface tracking-tight mb-1">Skyline Villa</h3>
+<p class="text-on-surface-variant/80 font-medium mb-4">Dubai, UAE</p>
+<button class="w-full bg-surface-container-high hover:bg-primary-container hover:text-white transition-all duration-300 py-3 rounded-full flex items-center justify-center gap-2">
+<span class="font-bold text-sm">Edit</span>
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Small Horizontal -->
+<div class="md:col-span-6 flex gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-[0px_10px_40px_rgba(0,95,159,0.06)] border border-outline-variant/10 group">
+<div class="w-32 h-32 flex-shrink-0 rounded-md overflow-hidden">
+<img alt="Emerald Peak Lodge" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="rustic alpine cabin with large windows nestled in a pine forest with snow-capped mountains in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjgNBEaizFqkyIyTky527euXwCAAhTdeTxgWfTOdctL1Bp8QFUraua3PkMeXmk1CTz8xxGECdYWH44SY6oTt_3KPBKjsgvrYuTRpX1502wbrXgcpi_AjrI67PzBusi9uCbk4eoWhljhDMkDpvXlSXYDQIry8nHv7SsCrg9WauNeK0RKo563BkwHx-ip4h2UtyyghW_P8zS7lwcnDnVKY4eNLTFmZzs0rFduTIHIPp_1BJykRgj5AKCO6WR0a6He3n22SMLlMOnNdc"/>
+</div>
+<div class="flex flex-col justify-center flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-on-surface tracking-tight leading-tight">Emerald Peak Lodge</h3>
+<span class="bg-outline-variant/20 text-on-surface-variant text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Inactive</span>
+</div>
+<p class="text-xs text-on-surface-variant/70 mb-3">Aspen, Colorado</p>
+<div class="flex gap-2">
+<button class="text-xs font-bold text-primary px-4 py-2 bg-primary-fixed rounded-full hover:bg-primary hover:text-white transition-colors">Edit</button>
+<button class="text-xs font-bold text-on-surface-variant px-4 py-2 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-colors">View Analytics</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Small Horizontal -->
+<div class="md:col-span-6 flex gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-[0px_10px_40px_rgba(0,95,159,0.06)] border border-outline-variant/10 group">
+<div class="w-32 h-32 flex-shrink-0 rounded-md overflow-hidden">
+<img alt="Rustic Oak Manor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="classic english brick manor house with climbing ivy and a manicured rose garden in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iciP3Kb45FJD115sApvepsPrvWZCYguXkbrwYfuYScL2kUtQnPRIy_PbyEqsVr5U1O62dHvvjiVj-svmwQ-wNJT-B9ygiCFoPqdf_6pFAvqu6svG75m2kngUXyVYnMkBeL_hebaN9b6G9tE2FJNZrn-N8YlkTkwjiajmhwvP2UOYdfNqGFPD6KiUsAqpgKNworZN2RFBsmqnTqQ6pzCJ0POkZ3tRg1lHHeqJf2RQUBZM5Wq2c8WsCFkit5qu7wX51fG-O0NIcEs"/>
+</div>
+<div class="flex flex-col justify-center flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-on-surface tracking-tight leading-tight">Rustic Oak Manor</h3>
+<span class="bg-primary/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Active</span>
+</div>
+<p class="text-xs text-on-surface-variant/70 mb-3">Cotswolds, UK</p>
+<div class="flex gap-2">
+<button class="text-xs font-bold text-primary px-4 py-2 bg-primary-fixed rounded-full hover:bg-primary hover:text-white transition-colors">Edit</button>
+<button class="text-xs font-bold text-on-surface-variant px-4 py-2 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-colors">View Analytics</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Hint -->
+<div class="mt-12 text-center py-16 px-6 rounded-lg bg-surface-container-low border-2 border-dashed border-outline-variant/30">
+<span class="material-symbols-outlined text-primary/40 text-5xl mb-4" data-icon="add_business">add_business</span>
+<h4 class="text-lg font-bold text-on-surface">Expand your reach</h4>
+<p class="text-on-surface-variant/80 max-w-xs mx-auto mb-6">List more services to attract high-value Tripwise travelers worldwide.</p>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-8 z-[60] group">
+<button class="bg-secondary-container text-white w-16 h-16 rounded-xl shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group-hover:w-48 overflow-hidden">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 600;">add</span>
+<span class="max-w-0 group-hover:max-w-xs transition-all duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold tracking-tight pl-2">Add Listing</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,95,159,0.06)] tonal-shift">
+<div class="flex justify-around items-center h-20 pb-4 px-4">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter']">Dashboard</span>
+</a>
+<!-- Listings (Active) -->
+<a class="flex flex-col items-center justify-center text-[#ff5e1f] dark:text-[#ff5e1f] scale-110 transition-transform tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter']">Listings</span>
+</a>
+<!-- Orders -->
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter']">Orders</span>
+</a>
+<!-- Finance -->
+<a class="flex flex-col items-center justify-center text-[#3f4752] dark:text-slate-400 opacity-70 tap-highlight-transparent hover:opacity-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-['Inter']">Finance</span>
+</a>
+</div>
+</nav>
+</body></html>

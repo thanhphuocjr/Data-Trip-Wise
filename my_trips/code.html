@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#0b79c3",
+                        "secondary-container": "#ff5e1f",
+                        "background": "#f8f9ff",
+                        "surface-tint": "#0061a3",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dfe2eb",
+                        "outline-variant": "#bfc7d4",
+                        "primary-fixed": "#d1e4ff",
+                        "on-secondary-container": "#551600",
+                        "primary-fixed-dim": "#9dcaff",
+                        "tertiary": "#005f9d",
+                        "secondary": "#ab3500",
+                        "on-background": "#181c22",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "on-secondary-fixed": "#390c00",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "primary": "#005f9f",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2c3137",
+                        "on-surface-variant": "#3f4752",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f0f4fc",
+                        "on-primary-fixed": "#001d36",
+                        "surface-container-highest": "#dfe2eb",
+                        "surface": "#f8f9ff",
+                        "inverse-primary": "#9dcaff",
+                        "surface-container-high": "#e5e8f0",
+                        "on-tertiary-fixed": "#001d35",
+                        "tertiary-fixed": "#d0e4ff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#0078c7",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fdfcff",
+                        "surface-container": "#ebeef6",
+                        "on-error-container": "#93000a",
+                        "outline": "#707884",
+                        "secondary-fixed": "#ffdbd0",
+                        "inverse-on-surface": "#edf1f9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#181c22",
+                        "surface-dim": "#d7dae2",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#832600",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-primary-fixed-variant": "#00497c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400 active:scale-95 duration-200" data-icon="search">search</span>
+<h1 class="text-2xl font-black text-sky-700 dark:text-sky-400 tracking-tighter">Tripwise</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden active:scale-95 duration-200">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a young man with a friendly smile, high-end photography style with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59O85BxWYvpaeOBLKRHVJDl5xKk_FJK77zGka29CK_oQ1rOkOTPbkLfv5mZ2tk4SD93aU55v_9vSwY-8iZX87mDYD8LvaNn-UdHyoFg4bfL0xqZKHeriqkQd1SUKpeIE6gvVJ4QX_FawbPCT0y5pyTTOE8NETqEKIcfWrol-6cte2O7TlMuVWZmL-XT25F-nqWGLSrW9OOk7KIDBnYBgynVF0OgOioVdYbzo3IRETkhaSqqraHQeFRMQ2iFZihiTYLPIvigq3m8A"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<!-- Title & Segmented Control -->
+<div class="mb-8">
+<h2 class="text-3xl font-black tracking-tight text-on-surface mb-6">My Trips</h2>
+<div class="flex bg-surface-container-low p-1.5 rounded-lg w-full">
+<button class="flex-1 py-3 px-4 rounded-md bg-surface-container-lowest shadow-sm text-primary font-bold text-sm transition-all">Upcoming</button>
+<button class="flex-1 py-3 px-4 rounded-md text-on-surface-variant font-medium text-sm hover:bg-sky-50/50 transition-colors">Completed</button>
+<button class="flex-1 py-3 px-4 rounded-md text-on-surface-variant font-medium text-sm hover:bg-sky-50/50 transition-colors">Cancelled</button>
+</div>
+</div>
+<!-- Featured Trip (Asymmetric Layout) -->
+<section class="mb-10">
+<div class="relative group cursor-pointer active:scale-[0.98] duration-300">
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0px_10px_40px_rgba(0,95,159,0.06)] flex flex-col md:flex-row">
+<div class="md:w-5/12 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="idyllic turquoise ocean water meeting white sandy beach in the maldives, high angle cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkxIIXSS2RVOQyPJsq9zT5KZOxIvk3wUwhrLi0dw3d3qe9-1mtHZk1FHmWNp1ymPfG06jFx5EPRzZXaUx50aZ7vp4sUB_UAqEjU_zQhyX9ykFIkD3EupyAXxHgvUCjTDa0sEd1nUUHxmAdrMuVLw8bMbGcwXQTZzcUPArF7YKpB-HZuU3TEQ_OOiGlRa-JjrOCtuhtjTORD5rXcib8Y1ZHI2YV_SnrMPkglhcU2P2YeLH2azl58Z7qCXz7zKEP-XRZfIACdFqRe2w"/>
+</div>
+<div class="p-8 md:w-7/12 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Flight + Resort</span>
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="text-2xl font-extrabold text-on-surface mb-2 leading-tight">Veligandu Island Resort</h3>
+<p class="text-on-surface-variant flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                                Oct 24 — Nov 02, 2024
+                            </p>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-6">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Status</span>
+<span class="text-primary font-bold">Confirmed</span>
+</div>
+<button class="bg-secondary-container text-on-secondary px-6 py-3 rounded-xl font-bold flex items-center gap-3 active:scale-90 duration-300">
+<span class="material-symbols-outlined text-xl" data-icon="qr_code_2">qr_code_2</span>
+                                View Ticket
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trips Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Flight Card -->
+<div class="bg-surface-container-low rounded-lg p-6 shadow-sm hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-white rounded-md flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest bg-surface-variant/30 px-2 py-1 rounded">TW-4921</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="text-xl font-bold">LHR</h4>
+<p class="text-xs text-on-surface-variant">London</p>
+</div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant mx-4 relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary bg-surface-container-low px-2 text-sm" data-icon="flight">flight</span>
+</div>
+<div class="text-right">
+<h4 class="text-xl font-bold">JFK</h4>
+<p class="text-xs text-on-surface-variant">New York</p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm font-medium text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+                        12:45 PM, Oct 12
+                    </div>
+</div>
+<button class="w-full py-4 bg-surface-container-lowest text-primary font-bold rounded-lg flex items-center justify-center gap-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                    Boarding Pass
+                </button>
+</div>
+<!-- Hotel Card -->
+<div class="bg-surface-container-low rounded-lg p-6 shadow-sm hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-white rounded-md flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="apartment">apartment</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-primary"></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-secondary"></div>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="text-lg font-bold mb-1">The Standard High Line</h4>
+<p class="text-sm text-on-surface-variant mb-4">848 Washington St, New York</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest/50 p-3 rounded-md">
+<p class="text-[9px] uppercase font-black text-on-surface-variant tracking-tighter">Check-in</p>
+<p class="font-bold text-sm">Oct 12, 2024</p>
+</div>
+<div class="bg-surface-container-lowest/50 p-3 rounded-md">
+<p class="text-[9px] uppercase font-black text-on-surface-variant tracking-tighter">Check-out</p>
+<p class="font-bold text-sm">Oct 18, 2024</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container-lowest text-primary font-bold rounded-lg flex items-center justify-center gap-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    E-Booking
+                </button>
+</div>
+<!-- Car Rental Card -->
+<div class="bg-surface-container-low rounded-lg p-6 shadow-sm hover:bg-surface-container-high transition-colors md:col-span-2">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-white rounded-md flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="car_rental">car_rental</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Tesla Model 3</h4>
+<p class="text-sm text-on-surface-variant">Hertz Premium • JFK Terminal 4</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Booking ID</p>
+<p class="font-bold">HZ-882190</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="key">key</span>
+                            Digital Key
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[3rem] bg-surface/90 dark:bg-slate-900/90 backdrop-blur-2xl shadow-[0px_-4px_20px_rgba(0,95,159,0.04)] flex justify-around items-center h-20 px-4 pb-4">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold hover:text-sky-600 transition-all active:scale-90 duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="travel">travel</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">My Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Planner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:scale-90 duration-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Admin - Financials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#9ccaff",
+                    "secondary-fixed-dim": "#ffb59d",
+                    "on-secondary-fixed": "#390c00",
+                    "on-primary-fixed-variant": "#00497c",
+                    "primary-fixed": "#d1e4ff",
+                    "secondary-fixed": "#ffdbd0",
+                    "surface-container-high": "#e5e8f0",
+                    "on-tertiary-container": "#fdfcff",
+                    "tertiary-fixed": "#d0e4ff",
+                    "surface-container": "#ebeef6",
+                    "secondary": "#ab3500",
+                    "secondary-container": "#ff5e1f",
+                    "surface-dim": "#d7dae2",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#005f9d",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#9dcaff",
+                    "primary": "#005f9f",
+                    "tertiary-container": "#0b79c3",
+                    "outline": "#707884",
+                    "on-secondary-fixed-variant": "#832600",
+                    "inverse-primary": "#9dcaff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#edf1f9",
+                    "on-tertiary-fixed-variant": "#00497a",
+                    "inverse-surface": "#2c3137",
+                    "on-background": "#181c22",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#551600",
+                    "surface-variant": "#dfe2eb",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f0f4fc",
+                    "on-surface": "#181c22",
+                    "surface-container-highest": "#dfe2eb",
+                    "surface-bright": "#f8f9ff",
+                    "outline-variant": "#bfc7d4",
+                    "on-primary-container": "#fdfcff",
+                    "on-tertiary-fixed": "#001d35",
+                    "surface-tint": "#0061a3",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#0078c7",
+                    "on-surface-variant": "#3f4752"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex justify-between items-center h-16 px-6">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">Tripwise Admin</span>
+<div class="hidden md:flex items-center gap-6 font-sans text-sm tracking-tight">
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Overview</a>
+<a class="text-blue-600 font-semibold border-b-2 border-blue-600" href="#">Financials</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-full text-xs w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search transactions..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<img alt="Administrator profile" class="w-8 h-8 rounded-full object-cover" data-alt="professional portrait of a corporate executive in a crisp blue suit with soft office lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFfQYe8HPErJjqlTp2q5tsAnRbvEKz7P4vJVNpRCRJVw2Hs_C4UF3vNmvEB2F-wzow_1uvhQ0WppJYQUu4zdIiYGzT_Xse0EybQ2DKA7wVWFRJ64clCLceixCXb9VKxO_OS5QH61jZ4XIRCOT_ebkppaiZC6ceaDpKPj20q40S0uQ12QAK5Ne3QqH7uOJXCTdOIaOtC8GZJJwyRhvWUBQFm8BeLLfP9Ca7NwRnxunzh_ZP_32jSlNLdT_G62FOwPA3Y5QRpOphNsg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950 hidden md:flex flex-col p-4 gap-2">
+<div class="flex items-center gap-3 px-2 mb-8 mt-2">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="payments">payments</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-slate-900 dark:text-white leading-tight">Operations</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Global Console</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_month">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="payments">payments</span>
+<span>Financials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span>Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-slate-600 hover:bg-slate-200/50 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="shield_person">shield_person</span>
+<span>Security</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 font-sans text-sm font-medium text-error hover:bg-error/5 transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 pb-12 px-6 lg:px-10 min-h-screen">
+<!-- Header & Action Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface mb-1">Financial Console</h1>
+<p class="text-on-surface-variant text-sm">Monitor revenue streams, manage commission structures, and authorize payouts.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-3 bg-surface-container-high text-on-surface font-semibold rounded-xl text-sm transition-transform active:scale-95">
+                    Export Ledger
+                </button>
+<button class="px-6 py-3 bg-secondary-container text-on-secondary font-semibold rounded-xl text-sm shadow-sm transition-transform active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+                    New Entry
+                </button>
+</div>
+</div>
+<!-- Financial Overview Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-10">
+<!-- Global Commission Settings -->
+<div class="lg:col-span-1 bg-surface-container-lowest p-6 rounded-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="label-md font-bold text-on-surface-variant uppercase tracking-wider">Commission Rate</span>
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</div>
+<div class="text-4xl font-black text-primary mb-2">12.5%</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Global standard rate applied to all provider bookings.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15">
+<button class="w-full py-2.5 text-primary font-bold text-sm hover:bg-primary-fixed transition-colors rounded-lg">Adjust Global Rate</button>
+</div>
+</div>
+<!-- Revenue Chart Area -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-lg flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<span class="label-md font-bold text-on-surface-variant uppercase tracking-wider">Revenue Growth (30D)</span>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-primary-fixed text-primary text-[10px] font-bold rounded">LIVE</span>
+</div>
+</div>
+<div class="flex-1 flex items-end justify-between gap-2 h-32 mb-4">
+<div class="w-full bg-primary/10 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm h-[80%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[70%]"></div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[90%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-2xl font-black text-on-surface">$242,800.00</div>
+<div class="flex items-center text-green-600 font-bold text-sm">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                        +14.2%
+                    </div>
+</div>
+</div>
+<!-- Total Payouts Recessed Area -->
+<div class="lg:col-span-1 bg-surface-container-low p-6 rounded-lg border border-outline-variant/10">
+<span class="label-md font-bold text-on-surface-variant uppercase tracking-wider block mb-4">Pending Payouts</span>
+<div class="text-4xl font-black text-secondary mb-2">$18,450</div>
+<div class="space-y-4 mt-6">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-xs text-on-surface-variant">14 Requests awaiting approval</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<span class="text-xs text-on-surface-variant">Avg. processing time: 4.2h</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Split -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-10">
+<!-- Pending Payouts List -->
+<div class="xl:col-span-2">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold tracking-tight">Payout Authorizations</h3>
+<button class="text-sm font-semibold text-primary">View All Requests</button>
+</div>
+<div class="space-y-4">
+<!-- Request Item -->
+<div class="bg-surface-container-lowest p-5 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-lg hover:shadow-primary/5 transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Provider profile" class="w-12 h-12 rounded-xl object-cover" data-alt="modern tech office interior with floor to ceiling windows and ergonomic furniture, bright natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuGehvTh4qRORmjB1JUsWYeALJ297IonHSoyISnUPd1Gw2nJNykIEiIiD1S9sCcc1x_2pbDFqXbxXbyYVYvg3vRxJE19EI07ejFD1VCI3G8K_UoKtQWfThgU1G4ekRn3A9aVyfX7S-nUU33NBNT2MRsB2d8GxqOkMZb1Z6vEgWye_dLOeZJK86mf4Hh2EemqM1KHLjPuO2u6FCF8uVlx8JHCdBbaNN4wK4uQ8hM92Q_5foKmV6DjfU2m0nZLQKEx3Jqvsdrpj9HpM"/>
+<div>
+<h4 class="font-bold text-on-surface">Alpine Retreats Ltd.</h4>
+<p class="text-xs text-on-surface-variant">ID: #PAY-88219 • Request Date: Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end">
+<span class="text-lg font-black text-on-surface">$4,250.00</span>
+<span class="text-[10px] font-bold text-secondary-container bg-secondary-container/10 px-2 py-0.5 rounded uppercase">Urgent</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 md:flex-none px-4 py-2 bg-error/10 text-error text-sm font-bold rounded-lg hover:bg-error hover:text-white transition-colors">Reject</button>
+<button class="flex-1 md:flex-none px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-container transition-colors">Approve</button>
+</div>
+</div>
+<!-- Request Item -->
+<div class="bg-surface-container-lowest p-5 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-lg hover:shadow-primary/5 transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Provider profile" class="w-12 h-12 rounded-xl object-cover" data-alt="luxury boutique hotel lobby with marble floors, gold accents and velvet seating in elegant warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiq3Md5ca3bnOTS09H2J3va_5BwSsbC3pI3CS4Q6OuoRYUWEw5HzPl7G0XL7H_DIJ-Ab3Mdv5bU43Qu9WO0tzQ3Ec56gJB-LniLZEIFfWf56XXxvA0qbmf52oPd3h4d86TXVTxcRg4j2K4o7PzsIgqYMj9pZo5CpZM48iWyxxZc14HrekgCr1U5uogDUfYwwSBgpGOXsxlXXjX1moliBqhPafsHrJRdOm2Vd-btaFJEOqrf5yhGyQ8MjJBxMSM7rlW61Tz6gS2SZ8"/>
+<div>
+<h4 class="font-bold text-on-surface">Ocean View Resorts</h4>
+<p class="text-xs text-on-surface-variant">ID: #PAY-88220 • Request Date: Oct 23, 2023</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end">
+<span class="text-lg font-black text-on-surface">$12,100.00</span>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded uppercase">Standard</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 md:flex-none px-4 py-2 bg-error/10 text-error text-sm font-bold rounded-lg hover:bg-error hover:text-white transition-colors">Reject</button>
+<button class="flex-1 md:flex-none px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-container transition-colors">Approve</button>
+</div>
+</div>
+<!-- Request Item -->
+<div class="bg-surface-container-lowest p-5 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-lg hover:shadow-primary/5 transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Provider profile" class="w-12 h-12 rounded-xl object-cover" data-alt="fleet of luxury silver SUVs parked in a clean minimalist hangar with bright overhead studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmAPabj_v-AZcjCvIvn4cjKzf3zW1cfWPNHypJTRoZLGTKQVeqTgJIAFOvnTJAFR-GNuSr_T2c5qdJWOM0thPWvia0HkK2aBNi5a-vhm2FgYRGC-0WYTB3DFbEUhd1MOLQ77mT7JR75EE-yjpksxmG2L-IVELYM3McZBNgpwMHB78qXxNWRBpcYuPB41-QJjhxxMtBu65wn5QjWlso04UmMjWdc49TJ0noXFhTEQoCqo652Gx5nXDQVcTvZtjhSmOn1LiPXT1fR3g"/>
+<div>
+<h4 class="font-bold text-on-surface">City Car Services</h4>
+<p class="text-xs text-on-surface-variant">ID: #PAY-88221 • Request Date: Oct 22, 2023</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end">
+<span class="text-lg font-black text-on-surface">$2,100.00</span>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded uppercase">Standard</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 md:flex-none px-4 py-2 bg-error/10 text-error text-sm font-bold rounded-lg hover:bg-error hover:text-white transition-colors">Reject</button>
+<button class="flex-1 md:flex-none px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-container transition-colors">Approve</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction Ledger -->
+<div class="xl:col-span-1">
+<div class="bg-surface-container p-6 rounded-lg h-full">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-lg font-bold tracking-tight">Recent Ledger</h3>
+<span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
+</div>
+<div class="space-y-6">
+<!-- Ledger Entry -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600 text-lg">south_west</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Booking Commission: BK-9902</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Today, 11:24 AM</p>
+</div>
+<div class="text-sm font-bold text-green-600">+$24.50</div>
+</div>
+<!-- Ledger Entry -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-600 text-lg">north_east</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Provider Payout: Urban Stay</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Today, 09:15 AM</p>
+</div>
+<div class="text-sm font-bold text-on-surface">-$1,200.00</div>
+</div>
+<!-- Ledger Entry -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600 text-lg">south_west</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Booking Commission: BK-9899</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Yesterday</p>
+</div>
+<div class="text-sm font-bold text-green-600">+$118.00</div>
+</div>
+<!-- Ledger Entry -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600 text-lg">swap_horiz</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Tax Reserve Transfer</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Oct 24, 2023</p>
+</div>
+<div class="text-sm font-bold text-on-surface">-$5,000.00</div>
+</div>
+<!-- Ledger Entry -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600 text-lg">south_west</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Booking Commission: BK-9872</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Oct 24, 2023</p>
+</div>
+<div class="text-sm font-bold text-green-600">+$52.10</div>
+</div>
+</div>
+<button class="w-full mt-10 py-3 bg-white text-on-surface text-xs font-bold rounded-xl shadow-sm border border-outline-variant/10 hover:bg-slate-50 transition-colors">
+                        Download Full Ledger (PDF)
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-secondary-container text-white rounded-full shadow-2xl flex items-center justify-center transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

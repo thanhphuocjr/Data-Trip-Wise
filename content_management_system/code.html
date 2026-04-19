@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Admin - CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "on-secondary-fixed": "#390c00",
+                        "on-primary-fixed-variant": "#00497c",
+                        "primary-fixed": "#d1e4ff",
+                        "secondary-fixed": "#ffdbd0",
+                        "surface-container-high": "#e5e8f0",
+                        "on-tertiary-container": "#fdfcff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "surface-container": "#ebeef6",
+                        "secondary": "#ab3500",
+                        "secondary-container": "#ff5e1f",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#005f9d",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#9dcaff",
+                        "primary": "#005f9f",
+                        "tertiary-container": "#0b79c3",
+                        "outline": "#707884",
+                        "on-secondary-fixed-variant": "#832600",
+                        "inverse-primary": "#9dcaff",
+                        "on-primary-fixed": "#001d36",
+                        "inverse-on-surface": "#edf1f9",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "inverse-surface": "#2c3137",
+                        "on-background": "#181c22",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#551600",
+                        "surface-variant": "#dfe2eb",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f0f4fc",
+                        "on-surface": "#181c22",
+                        "surface-container-highest": "#dfe2eb",
+                        "surface-bright": "#f8f9ff",
+                        "outline-variant": "#bfc7d4",
+                        "on-primary-container": "#fdfcff",
+                        "on-tertiary-fixed": "#001d35",
+                        "surface-tint": "#0061a3",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0078c7",
+                        "on-surface-variant": "#3f4752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950 flex flex-col p-4 gap-2">
+<div class="px-2 py-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-slate-900 dark:text-white leading-tight">Operations</h2>
+<p class="text-xs text-slate-500 font-medium">Global Console</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inventory Active for CMS -->
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Inventory
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">group</span>
+                Users
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">payments</span>
+                Financials
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                Analytics
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
+<button class="w-full mb-4 py-3 bg-secondary-container text-on-secondary font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                New Entry
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+                Security
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Log Out
+            </a>
+</div>
+</aside>
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex justify-between items-center h-16 px-6 pl-72 shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex items-center flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-blue-600 transition-all" placeholder="Search destinations, tours, or flights..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 text-blue-600 dark:text-blue-400 font-sans text-sm tracking-tight font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors active:scale-95 duration-150">
+                Support
+            </button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-slate-200 ml-2">
+<img alt="Administrator profile" class="w-full h-full object-cover" data-alt="professional male administrator profile picture with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJcLBrLKKcAV-mof_N6w5QlGtxuMargqvGizBLHT2MKENR0O7Fi3bIUlBrlwSbUe070ARr9k_BKYMKxGSz2J7R1lUVNxBAUOotQh5KU49l_Jb-ypfyyTWJpiaFXE5_TdcutkHUNiCO1Ev42BqKJF3ptkvJSgK3EQRvnZuqf8GpDUCggQOC-gMhOIsUOOCNju4PRPsbGmHWk1JX-6W-GczAai3ojafJNfy2RlZ20TrfZgcbIfMU7owN9ziTavQhTTPuBCU842QMoy4"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pl-64 pt-16 min-h-screen">
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Content Management</h1>
+<p class="text-on-surface-variant max-w-2xl">Refine the voyager's experience. Manage global destinations, inventory categories, and live travel listings from a single editorial interface.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-highest text-on-surface font-semibold rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-secondary-container text-on-secondary font-bold rounded-xl hover:opacity-90 shadow-lg shadow-secondary/20 transition-all">
+<span class="material-symbols-outlined">publish</span>
+                        Publish All
+                    </button>
+</div>
+</div>
+<!-- Management Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+<!-- Destinations Bento -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold tracking-tight">Top Destinations</h3>
+<button class="text-primary font-semibold text-sm hover:underline">Manage All</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Tokyo -->
+<div class="group relative h-64 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="vibrant street view of Tokyo at night with neon lights reflecting on wet pavement and traditional lanterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdEEwn3GlL08QXs9p-PqMDGGcnZt5r5WxfUEZ5NktZhqTjrcBfZNgIT2sSg0ROsxET93twImCgt0eou5jgZzl5sihJjieF3NkEcsUHHn1lYBGq-fIa3DsVafKQZ_NbJ-JFJg7fpUEZT4C1tNfHKizxywRxnSuqbkAg6OM2n58qrmUxzWIC9h6cIDjYsyv-x-lFRD-eYEm1cn5HnhUcUvBdWiawMCMMq8MkATVqUjlqD1WYFB3H0n2pJVqHXdgaWttlBZHLP-I8Zig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary-fixed mb-1 block">Asia</span>
+<h4 class="text-white text-lg font-bold">Tokyo, Japan</h4>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 bg-white/20 backdrop-blur-md rounded text-[10px] text-white font-medium uppercase">12 Active</span>
+<span class="px-2 py-0.5 bg-green-500/80 rounded text-[10px] text-white font-medium uppercase">Trending</span>
+</div>
+</div>
+<button class="absolute top-3 right-3 p-2 bg-white/10 backdrop-blur-md rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<!-- Bali -->
+<div class="group relative h-64 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="lush tropical resort in Bali with infinity pool overlooking emerald green jungle during sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nqMd5Fy-8gREu04VP21Z9KfkLJrNPKMxP99Bk0fNdeMSnXLRFXvzgUtPAn12ifzIb07Q67kdDNpvryrs0rJ2SFxh_9V5WV_O0pke4Hb5W9ZO5hXLO7vnN4-7NBIsR9J5LpFgotbMgzPeB0BKplDGsovl0NRHdtvh0AAecjznilI1T0ZmdSsX2ZV9GryTQ9fYO9R10c_hSVmZ6hDqlbnHdhew5jXo13lVELlknnZh1sSRsYZxeGO0QtykZpcOlh_VQXePbVGuBQE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary-fixed mb-1 block">Oceania</span>
+<h4 class="text-white text-lg font-bold">Bali, Indonesia</h4>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 bg-white/20 backdrop-blur-md rounded text-[10px] text-white font-medium uppercase">45 Active</span>
+</div>
+</div>
+<button class="absolute top-3 right-3 p-2 bg-white/10 backdrop-blur-md rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<!-- Paris -->
+<div class="group relative h-64 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="romantic street view of Paris with the Eiffel Tower in the distance through Haussmann architecture buildings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0O2nB2Oi1XxSwWyrAZbLxKNh7J42N8PS6eQsOiq-5TGNl9JOaYTXhegqQDBNQwftujVBdCguE2zzo0kzoVgk2SNW-ZXmcGFhcmbmvD7g63N6erlP3g7fI67m1s0CIsyE3BDP7_gSZnMod3Xfz_-AhCq_7i428uk0wzPEu2FRDvAfGVcjl3c2sn72H-cgI1WU98jg9rJyPKs-qkibseNpzNVozDcCGRz-3jHASgeKMvXlWUneomiD3uoGaBCfOb-3HmK36nXWB6NA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary-fixed mb-1 block">Europe</span>
+<h4 class="text-white text-lg font-bold">Paris, France</h4>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 bg-white/20 backdrop-blur-md rounded text-[10px] text-white font-medium uppercase">32 Active</span>
+</div>
+</div>
+<button class="absolute top-3 right-3 p-2 bg-white/10 backdrop-blur-md rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category Management -->
+<div class="lg:col-span-4 space-y-4">
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm h-full">
+<h3 class="text-xl font-bold tracking-tight mb-6">Asset Categories</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">hotel</span>
+<span class="font-bold">Hotels</span>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant">1,240 Assets</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">flight</span>
+<span class="font-bold">Flights</span>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant">856 Routes</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-tertiary">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">explore</span>
+<span class="font-bold">Tours</span>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant">420 Curated</span>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-dashed border-outline-variant rounded-xl text-outline font-medium hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_circle</span>
+                            Add New Category
+                        </button>
+</div>
+</div>
+</div>
+<!-- Active Content List -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-8 py-6 flex items-center justify-between border-b border-surface-container">
+<h3 class="text-xl font-bold tracking-tight">Active Content Library</h3>
+<div class="flex gap-2">
+<div class="px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full">All Items</div>
+<div class="px-3 py-1.5 hover:bg-surface-container text-on-surface-variant text-xs font-bold rounded-full transition-colors cursor-pointer">Drafts</div>
+<div class="px-3 py-1.5 hover:bg-surface-container text-on-surface-variant text-xs font-bold rounded-full transition-colors cursor-pointer">Archived</div>
+</div>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Content Detail</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Category</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant">Last Updated</th>
+<th class="px-8 py-4 font-bold text-xs uppercase tracking-wider text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="luxurious modern hotel lobby with marble floors, warm ambient lighting, and elegant minimalist furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0RfDmwkO7dAbDox3wcsb1NFCoU-ifNdS0m0aKnOW6CeqtwYvZCIOzQUkxTyDPn05KuRYzneJ_k6ct1bIfKiZ8PObtgWm8usztAeZOJRy1-w3CYOiHgFVtePr5oFhEelJj0gstvjH4eXrlfjNw56Djc7oJYs2XuqaPkyauvR1_lifLjeTRFHl0XNy9dswFqNnML7wWPXtTTcF9fkxVg-iaos7UyoHgLcMgZ-UQY5DVPUzexMQ6Jy3kWwzm5i0uiflCjLPps9XgmSo"/>
+<div>
+<p class="font-bold text-on-surface">The Ritz-Carlton Bali</p>
+<p class="text-xs text-on-surface-variant">Nusa Dua, South Kuta</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Luxury Hotel</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-green-600">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-semibold">Live</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-on-surface-variant">Oct 24, 2023</p>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Edit Content">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors" title="Delete Content">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="overhead view of a traditional wooden boat on crystal clear turquoise waters near a tropical island beach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcJ5GTe9sR4u-YzR7gJSOVnloxp1C2drc54a_3P6uWt8WmLTnqRwHp5op9nF8w-sQpDniqQcf-kfqZltAimSLZHN8GWBeLt3TWI6W0JKFDGx5KtVzahtoCHO2rGBbd-Fd_4xCcDanSrP_b761m7q8q4xSNJm1MQfLphVmiTCwcZulad0bU-YAzULQsQFDNEXOQ98C1Ledp40lvWCoKKyBB_H5Rr-GxpouTjeODKmyOaq9MFPVQhsiIYxhvoZz-BzfQkI7EF8HdKqw"/>
+<div>
+<p class="font-bold text-on-surface">7-Day Island Hopper</p>
+<p class="text-xs text-on-surface-variant">Greek Isles &amp; Cyclades</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold rounded-full uppercase">Private Tour</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-orange-500">
+<span class="w-2 h-2 rounded-full bg-orange-500"></span>
+<span class="text-sm font-semibold">Updating</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-on-surface-variant">Oct 22, 2023</p>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="modern tech city architecture with sleek glass skyscrapers and green urban spaces under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuFSrzMv5EAv4OQAtpKzZnU_5alN9GERJMfbzHE6uAFWalvRMRWF5IeFtjiJsjmz0eb1kjU_9ZfOytEeCrNX8KJadJKNV6jBFNQB4JfEOlS7lL1nW9hQ51-4YV-qI7_ggiHCLGKX3RYC_yTgjmXaJwbY0vpjESTMTkksz1AWiGh10T0LC8Yy-XNRY_Y1BsN5BUTYSXl6DToadIAnOfUypabrcrm7QbMI5pkxHiwZXypYSoYRvAeyXVx-Daw29dEP_q-h6nqgNuXOk"/>
+<div>
+<p class="font-bold text-on-surface">Digital Nomad Haven</p>
+<p class="text-xs text-on-surface-variant">Tokyo &amp; Kyoto Rail</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] font-bold rounded-full uppercase">Travel Pack</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-green-600">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-semibold">Live</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-on-surface-variant">Oct 20, 2023</p>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-8 py-4 bg-surface-container-low flex items-center justify-between">
+<p class="text-xs font-semibold text-on-surface-variant">Showing 3 of 152 content items</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-outline-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Restricted to CMS Dashboard) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+<span class="absolute right-full mr-4 px-4 py-2 bg-inverse-surface text-inverse-on-surface text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">New Entry</span>
+</button>
+</div>
+</body></html>

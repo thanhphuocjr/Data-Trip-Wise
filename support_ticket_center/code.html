@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tripwise Admin Support Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#9ccaff",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "on-secondary-fixed": "#390c00",
+                        "on-primary-fixed-variant": "#00497c",
+                        "primary-fixed": "#d1e4ff",
+                        "secondary-fixed": "#ffdbd0",
+                        "surface-container-high": "#e5e8f0",
+                        "on-tertiary-container": "#fdfcff",
+                        "tertiary-fixed": "#d0e4ff",
+                        "surface-container": "#ebeef6",
+                        "secondary": "#ab3500",
+                        "secondary-container": "#ff5e1f",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#005f9d",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#9dcaff",
+                        "primary": "#005f9f",
+                        "tertiary-container": "#0b79c3",
+                        "outline": "#707884",
+                        "on-secondary-fixed-variant": "#832600",
+                        "inverse-primary": "#9dcaff",
+                        "on-primary-fixed": "#001d36",
+                        "inverse-on-surface": "#edf1f9",
+                        "on-tertiary-fixed-variant": "#00497a",
+                        "inverse-surface": "#2c3137",
+                        "on-background": "#181c22",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#551600",
+                        "surface-variant": "#dfe2eb",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f0f4fc",
+                        "on-surface": "#181c22",
+                        "surface-container-highest": "#dfe2eb",
+                        "surface-bright": "#f8f9ff",
+                        "outline-variant": "#bfc7d4",
+                        "on-primary-container": "#fdfcff",
+                        "on-tertiary-fixed": "#001d35",
+                        "surface-tint": "#0061a3",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0078c7",
+                        "on-surface-variant": "#3f4752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950 flex flex-col p-4 gap-2">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-slate-900 dark:text-white leading-none">Operations</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Global Console</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Analytics</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200/50 pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+<span>Security</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-200 ease-in-out font-sans text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<header class="fixed top-0 right-0 left-64 h-16 px-8 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex justify-between items-center border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex items-center gap-4">
+<h2 class="text-xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">Support Ticket Center</h2>
+<div class="h-4 w-[1px] bg-slate-300"></div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="support_agent">support_agent</span>
+<span>Online</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined p-2 text-slate-500 hover:bg-slate-50 rounded-full cursor-pointer transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border-2 border-white"></span>
+</div>
+<span class="material-symbols-outlined p-2 text-slate-500 hover:bg-slate-50 rounded-full cursor-pointer transition-colors" data-icon="settings">settings</span>
+<div class="flex items-center gap-3 pl-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="professional portrait of a male administrator in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwmNUSRzCcx8GA2oEuj4bKWB1sMVjI7UEcfcetoOD4zyb-tU5l75g7KdWujvg5Wm-h78cvXSxQFG3y-CL8nQg_rtxHsbgSENjpxp65qCxvXFno6dHqDyw56Z3UKX5muK-qTwOX-OcwGCeScXNGw1KuDCWOLwTtxjUTR9aRLUG0TLEa00cFHOJMt-mdZpU3YVKuLD4OzDtTZ-FMrNHdeYXa5oOrdOQ6wDRq-Mnq2VtiQga5v-Eow6HzTyYgTqpg0iXb2weXCPjbNog"/>
+<span class="text-sm font-medium">Admin User</span>
+</div>
+</div>
+</header>
+<main class="ml-64 pt-16 h-screen overflow-hidden flex bg-surface">
+<section class="flex-1 flex flex-col p-6 overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4 bg-surface-container-low p-1.5 rounded-full">
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest shadow-sm text-primary font-semibold text-sm">Open (12)</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-colors">In Progress (8)</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-colors">Resolved (142)</button>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-xl outline-variant/15 outline">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Search tickets..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto pr-4 scrollbar-hide space-y-4">
+<div class="group bg-surface-container-lowest p-6 rounded-DEFAULT transition-all hover:bg-primary-fixed/30 cursor-pointer relative overflow-hidden ring-1 ring-outline-variant/10">
+<div class="absolute top-0 right-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold bg-error-container text-on-error-container px-3 py-1 rounded-full uppercase tracking-wider">High Priority</span>
+<span class="text-xs font-medium text-on-surface-variant">#TW-8842</span>
+</div>
+<span class="text-xs text-on-surface-variant">24m ago</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-2">Refund requested for flight cancellation at CDG</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">User is currently at Paris Charles de Gaulle and their connecting flight was canceled. Seeking immediate hotel voucher or refund options as per policy...</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="profile photo of a young man traveling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClLcHRcTjqkoNOfn6MO9r6-T9nM57DVL4Kg5Tnrugp61I9ox85s54d9CGqACFKzfpwbT3swwXsth_53LiZRQwzT3iySl4J-9GqP1PQikGdUt7ZKcpjuK_3ezyClC7zXRg5nQqj3M7jT5JNPlYfXVt4UmhzDs4JcZ7HbVzACgN8K08nj0PMUcHZefjoOnEoIvu9Y6eyoCo17YJFtcHcCtgZEPMFYttwfmd2xoLxUMtqo_yvRjJs1Eeq1ydsHTKWZKbCRWYuj-3D_qI"/>
+<div>
+<p class="text-xs font-bold leading-none">Marco Rossi</p>
+<p class="text-[10px] text-on-surface-variant">Gold Member</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center border-2 border-white"><span class="material-symbols-outlined text-[14px]" data-icon="flight">flight</span></div>
+<div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center border-2 border-white"><span class="material-symbols-outlined text-[14px]" data-icon="hotel">hotel</span></div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-DEFAULT transition-all hover:bg-primary-fixed/30 cursor-pointer ring-1 ring-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider">Medium</span>
+<span class="text-xs font-medium text-on-surface-variant">#TW-8839</span>
+</div>
+<span class="text-xs text-on-surface-variant">1h ago</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-2">Incorrect billing on car rental deposit</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">Customer reporting double charge on their credit card statement for the Hertz rental in Munich. Provider status says completed.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="portrait of a woman smiling outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkJ4CebbULiYyEAvpD3dITGOT5LDJ_3LLI0iaN5nWT5C_K3d34pKY9DdgOgj-ZHIyqro_FloNed0a_JL-5EzjW294cYmOET_W3t6vn18ZkJC1JsOml6VnfMKcAkptBnY3J4qx03fjSfn38MZFOcvL9Fe5wyOOnsO5LlDLIuNwtzIt5HKpaZz_DxGEh3Sao86OgWEIT57RdJjf8ON7cIbVlrXJ3xkt2GWrOKE-nzSI5UWqQIM4MVEh_gbSHj6aaAsqUxLKkagd6rTs"/>
+<div>
+<p class="text-xs font-bold leading-none">Elena Schmidt</p>
+<p class="text-[10px] text-on-surface-variant">Standard User</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border-2 border-white"><span class="material-symbols-outlined text-[14px]" data-icon="directions_car">directions_car</span></div>
+</div>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-DEFAULT transition-all hover:bg-primary-fixed/30 cursor-pointer ring-1 ring-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider">Medium</span>
+<span class="text-xs font-medium text-on-surface-variant">#TW-8835</span>
+</div>
+<span class="text-xs text-on-surface-variant">3h ago</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-2">Waitlist inquiry for Tokyo Gourmet Tour</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">Group of 4 asking if there's any chance of opening spots for the November 12th evening tour. Currently fully booked.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="woman wearing glasses in an urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZGFjLZE6cOjXINSzxpMZQVDBY3WIC4clXE4VwgSBxYd1TX_1l8z3Zbk9PAA1KQh7d9Cx3ld1YAAwlql4BtCT6bGXatmq9yVmxLn1WgF3q65Juk4oks6dfMYrDa-k2Z6opP8JNb5QIZ3bGD6bG5irwVbOJ0KBojFn0CBvwUf_Pb7uYm0KaYcu3JUrrwt_b7ti8p0mAVCpdPQeKkeXlKbpkGLGSV6WhOfUdYvCHRGMnihLsA0po_pg_GnEA5PriPofh10U06sPuyoo"/>
+<div>
+<p class="text-xs font-bold leading-none">Sarah Chen</p>
+<p class="text-[10px] text-on-surface-variant">Premium Member</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center border-2 border-white"><span class="material-symbols-outlined text-[14px]" data-icon="restaurant">restaurant</span></div>
+</div>
+</div>
+</div>
+</section>
+<aside class="w-[480px] h-full bg-surface-container-low border-l border-outline-variant/15 flex flex-col">
+<div class="p-6 border-b border-outline-variant/15 bg-surface-container-lowest">
+<div class="flex items-center gap-4 mb-6">
+<img class="w-14 h-14 rounded-full object-cover shadow-md" data-alt="traveler profile image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAPkrT3toa5IFg0QjQTdm9gYLFqCDbig9c45OIozL4GztVixJ_JGDsLhHYj7eQm6xCs_xVE_WLLmTkP86RuqU3USU9K4FNhBBWS0m2ToLir2etwCaEPdjubHFd7Yqw5mnbHiUfChfn5NHN3DRIfIpr4-K-VPjOMYrhV8V_BTu4t1IfIli8OfaRcyY-_hYtZXmwtDfG3xKabYgcWB7kQFMeOrEt5v5O7-6Kr2P8YPcbJyrR1MLMRGUlNhs2Tfg9j790sa3gQVllpKM"/>
+<div>
+<h2 class="text-lg font-bold leading-tight">Marco Rossi</h2>
+<div class="flex items-center gap-2">
+<span class="text-xs px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant rounded-md font-medium">Gold Member</span>
+<span class="text-xs text-on-surface-variant">Rome, IT</span>
+</div>
+</div>
+<button class="ml-auto w-10 h-10 rounded-full bg-surface hover:bg-surface-container-high transition-colors flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface rounded-xl ring-1 ring-outline-variant/5">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1 tracking-wider">Current Trip</p>
+<p class="text-sm font-bold truncate">Paris &amp; Lyon Escape</p>
+</div>
+<div class="p-4 bg-surface rounded-xl ring-1 ring-outline-variant/5">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold mb-1 tracking-wider">Booking ID</p>
+<p class="text-sm font-bold">#BP-90021-AF</p>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col p-6 overflow-hidden">
+<div class="flex-1 overflow-y-auto pr-2 scrollbar-hide space-y-6">
+<div class="text-center">
+<span class="text-[10px] font-bold text-on-surface-variant/60 bg-surface-container-high px-3 py-1 rounded-full uppercase tracking-tighter">October 24, 2023</span>
+</div>
+<div class="flex flex-col gap-2 max-w-[85%]">
+<div class="bg-white p-4 rounded-t-2xl rounded-br-2xl rounded-bl-none shadow-sm ring-1 ring-outline-variant/10">
+<p class="text-sm">Hi, I'm stuck at CDG. My Air France flight AF1234 was canceled due to technical issues. The line at the counter is huge. Can you help me find a hotel for tonight?</p>
+</div>
+<span class="text-[10px] text-on-surface-variant self-start pl-1">09:12 AM</span>
+</div>
+<div class="flex flex-col gap-2 max-w-[85%] self-end">
+<div class="bg-primary text-white p-4 rounded-t-2xl rounded-bl-2xl rounded-br-none shadow-sm">
+<p class="text-sm">Hello Marco! I'm looking into this right now. Checking your policy and available hotel vouchers near CDG terminal 2. One moment.</p>
+</div>
+<span class="text-[10px] text-on-surface-variant self-end pr-1">09:14 AM</span>
+</div>
+<div class="flex flex-col gap-2 max-w-[85%]">
+<div class="bg-white p-4 rounded-t-2xl rounded-br-2xl rounded-bl-none shadow-sm ring-1 ring-outline-variant/10">
+<p class="text-sm">Thank you. I'm traveling with my wife and we have 2 large suitcases. A hotel with a shuttle would be great.</p>
+</div>
+<span class="text-[10px] text-on-surface-variant self-start pl-1">09:15 AM</span>
+</div>
+<div class="bg-surface-container-high/50 p-4 rounded-xl border-l-4 border-primary">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="hotel">hotel</span>
+<span class="text-xs font-bold uppercase tracking-wider">System Action</span>
+</div>
+<p class="text-xs text-on-surface-variant">Suggested: Pullman Paris Roissy CDG Airport - 4.5★ - 1.2km away. Shuttle available every 15 mins.</p>
+<button class="mt-3 text-xs font-bold text-primary hover:underline">Approve &amp; Send Voucher</button>
+</div>
+</div>
+<div class="mt-6">
+<div class="bg-surface-container-lowest p-2 rounded-2xl shadow-sm ring-1 ring-outline-variant/20 flex flex-col">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm p-3 min-h-[80px] resize-none" placeholder="Type your response..." rows="3"></textarea>
+<div class="flex justify-between items-center px-2 py-1">
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="attach_file">attach_file</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="mood">mood</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="quick_reference_all">quick_reference_all</span>
+</button>
+</div>
+<button class="bg-secondary-container text-on-secondary px-6 py-2 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all">
+                                Send Response
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<div class="fixed bottom-8 right-[500px] z-30">
+<button class="w-14 h-14 bg-secondary shadow-xl rounded-full flex items-center justify-center text-white hover:rotate-12 transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+<span class="absolute right-16 bg-surface-container-lowest text-on-surface px-4 py-2 rounded-xl text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Create New Ticket</span>
+</button>
+</div>
+</body></html>
